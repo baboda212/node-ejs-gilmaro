@@ -42,7 +42,7 @@ a{
 .main-visual{
     width: 375px;
     height: 200px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .container .main-visual .images img{
     width: 375px;
