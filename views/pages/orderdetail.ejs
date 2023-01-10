@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orderdetail</title>
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="css/orderdetail.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">   
+</head>
+<body>
+    <div class="container">
+        <!-- header -->
+        <%- include('components/header.ejs') %> 
+        <!-- 본문 -->
+        <h1>관리자(주문제작상세내역)</h1>
+        <table class="order">
+            <tr>
+                <td>이름:홍길동</td>
+                <td>연락처: 010-0000-0000</td>
+            </tr>
+            <tr>
+                <td colspan="2">이메일: abc@naver.com</td>
+                <!-- <td></td> -->
+            </tr>
+            <tr>
+                <td colspan="2">제목: 주문의뢰의 건</td>
+            </tr>
+            <tr>
+                <td colspan="2">세부내용</td>
+            </tr>
+        </table>
+        <%- include('components/footer.ejs') %> 
+        <%- include('components/bottomNav.ejs') %>
+        <%- include('components/sitemap.ejs') %> 
+    </div>
+
+
+    <script src="js/sitemap.js"></script>
+</body>
+</html>

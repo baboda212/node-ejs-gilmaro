@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pay</title>
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="css/pay.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <div class="container">
+        <!-- header -->
+        <%- include('components/header.ejs') %> 
+        <h1>전체상품(1)</h1>
+        <div class="product-info">
+            <div class="info">
+                <img src="images/임시사진(제품)/RSP-607-550.jpg" alt="상품사진">
+                <div class="info-text">
+                    <h4>RENOMA</h4>
+                    <p>RENOMA 양산 (RSP-623)</p>
+                    <p>정상가: 48,000원</p>
+                    <p>수량: 1개</p>
+                    <p>색상: Black</p>
+                </div>
+            </div>
+            <div class="change-box">
+              <p class="count-text">수량변경</p>
+              <form action="" method="get">
+                <button>-</button>
+                <p class="count">1</p>
+                <button>+</button>
+                <p class="total">48,000 원</p>
+              </form>  
+            </div>
+            <div class="pay-box">
+                <table>
+                    <tr>
+                        <td>총 상품금액</td>
+                        <td>48,000원</td>
+                    </tr>
+                    <tr>
+                        <td>배송비</td>
+                        <td>3,000원</td>
+                    </tr>
+                    <tr>
+                        <td>합계</td>
+                        <td>51,000원</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="order">
+                <h4>총 51,000원</h4>
+                <h4>주문하기</h4>
+            </div>
+        </div>
+        <%- include('components/footer.ejs') %> 
+        <%- include('components/bottomNav.ejs') %>
+        <%- include('components/sitemap.ejs') %> 
+    </div>
+
+    <script src="js/sitemap.js"></script>
+</body>
+</html>

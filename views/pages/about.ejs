@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+     <!-- 제이쿼리 -->
+     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- header -->
+        <%- include('components/header.ejs') %> 
+        <!-- 본문 -->
+        <section class="about">
+            <div class="head">
+                <h1>ABOUT</h1>
+                <img src="images/about.jpg" alt="회사이미지">
+            </div>
+            <div class="company">
+                <h1>WHY GILMARO</h1>
+                <p>“길마로” 라는 이름은 순수 한국어의 고어입니다. 전쟁터에서 승리하고 돌아오는 장군을 일컬어 “길마로”라고 칭하였다고 합니다. 현대사회에서는 무기로 전쟁을 하는 것은 아니지만 전쟁과 다름없는 선의의 경쟁을 어느 분야에서든 하여야 합니다. 이러한 현대사회의 경쟁에서 승리 하라는 의미에서 회사명을 지었습니다.</p>
+            </div>
+        </section>
+        <section class="address">
+            <div class="head-address">
+                <img src="images/adress.jpg" alt="회사이미지">
+                <h1>오시는 길</h1>
+            </div>
+            <div class="address-list">
+                <p>경기도 하남시 조정대로 45 (풍산동) 미사센텀비즈 F202호</p>
+                <p>전화 02.425.3200   팩스 02.425.3293</p>
+                <p>emal gilmaro@naver.com</p>
+            </div>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6326.105083417558!2d127.18106520622855!3d37.55382587522948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cb1ca31afbc63%3A0xd5842fd649f05872!2z66-47IKs7IS87YWA67mE7KaI!5e0!3m2!1sko!2skr!4v1673251020243!5m2!1sko!2skr" width="375" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+        <%- include('components/footer.ejs') %> 
+        <%- include('components/bottomNav.ejs') %>
+        <%- include('components/sitemap.ejs') %>
+    </div>
+
+    <script src="js/sitemap.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Noto Sans KR', sans-serif, 'Roboto', sans-serif;
+}
+.container{
+    max-width: 375px;
+    margin: 0 auto;
+    position: relative;
+}
+/* footer.css */
+.footer {
+    width: 100%;
+    height: 250px;
+}
+
+.footer .footer-menu {
+    width: 100%;
+    height: 40px;
+    background-color: #6c7178;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+/* footer-menu */
+.footer .footer-menu ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    
+}
+
+.footer .footer-menu ul li {
+    text-align: center;
+}
+
+.footer .footer-menu ul li a {
+    color: #fff;
+    
+}
+
+/* footer-text-box */
+.footer .footer-text-box {
+    padding: 0 12px;
+    margin-bottom: 15px;
+}
+.footer .footer-text-box a{
+    color: #000;
+}
+.footer .footer-text-box p {
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.footer .footer-text-box2 {
+    margin-bottom: 20px;
+}
+
+.footer .footer-text-box2 ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.footer .footer-text-copy {
+    margin-bottom: 15px;
+}
+
+.footer .footer-text-copy p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer .bold {
+    font-weight: 700;
+}

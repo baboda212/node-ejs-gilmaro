@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+     
+</head>
+<body>
+    <div class="container">
+        <!-- splash screen -->
+        <div class="splash-logo" >
+            <img src="images/biglogo.svg" alt="로고">
+            <h1 class="logo-text">GILMARO</h1>
+        </div>
+        <!-- index.html -->
+        <!-- header -->
+        <%- include('components/header.ejs') %> 
+        
+        <section class="main-visual">
+            <div class="images">
+                <img src="images/visual01.jpg" alt="메인이미지">
+                <img src="images/visual02.jpg" alt="메인이미지">
+                <img src="images/visual03.jpg" alt="메인이미지">
+                <img src="images/visual04.jpg" alt="메인이미지">
+                <img src="images/visual05.jpg" alt="메인이미지">
+            </div>
+        </section>
+        <section class="brands">
+            <h1>OUR BRANDS</h1>
+            <div class="brands_site">
+                <a href="#"><img class="circle" src="images/a1.jpg" alt="레노마"></a>
+                <a href="#"><img class="circle" src="images/a2.jpg" alt="무민"></a>
+                <a href="#"><img class="circle" src="images/a3.jpg" alt="조르지오페리"></a>
+                <a href="#"><img class="circle" src="images/a4.jpg" alt="엠유스포츠"></a>
+                <a href="#"><img class="circle" src="images/a5.jpg" alt="엔솔로지"></a>
+            </div>
+        </section>
+        <section class="products">
+            <h1>NEW ARRAINAL</h1>
+            <div class="products-list">
+                <div class="product">
+                        <img src="<%= products[50].imgUrl  %> " alt="양산">
+                        <a href="#" class="icon">
+                            <img class="icon-heart" src="/images/ri_heart-line.svg" alt="좋아요">
+                        </a>
+                        <p><%= products[50].brand_en %> <%= products[50].name %></p>
+                        <h4><%= products[50].price  %></h4>   
+                </div>
+                <div class="product">
+                    <a href="#">
+                        <img src="<%= products[49].imgUrl  %> " alt="양산">
+                        <img class="icon-heart" src="/images/ri_heart-line.svg" alt="좋아요">
+                        <p><%= products[49].brand_en %> <%= products[49].name %></p>
+                        <h4><%= products[49].price  %></h4>      
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="#">
+                        <img src="<%= products[48].imgUrl  %> " alt="양산">
+                        <img class="icon-heart" src="/images/ri_heart-line.svg" alt="좋아요">
+                        <p><%= products[48].brand_en %> <%= products[48].name %></p>
+                        <h4><%= products[48].price  %></h4>      
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="#">
+                        <img src="<%= products[47].imgUrl  %> " alt="양산">
+                        <img class="icon-heart" src="/images/ri_heart-line.svg" alt="좋아요">
+                        <p><%= products[47].brand_en %> <%= products[47].name %></p>
+                        <h4><%= products[47].price  %></h4>      
+                    </a>
+                </div>
+                <a class="more" href="#">더보기</a>
+            </div>
+        </section>
+        <%- include('components/footer.ejs') %> 
+        <%- include('components/bottomNav.ejs') %>
+        <%- include('components/sitemap.ejs') %> 
+    </div>
+    
+
+   <script src="js/slide.js"></script> 
+   <script src="js/sitemap.js"></script>
+</body>
+</html>

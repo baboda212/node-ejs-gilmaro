@@ -1,0 +1,152 @@
+/* header.css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Noto Sans KR', sans-serif, 'Roboto', sans-serif;
+}
+.container{
+    max-width: 375px;
+    margin: 0 auto;
+    position: relative;
+}
+ul li{
+    list-style-type: none;
+}
+.container .nav {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    height: 50px;    
+}
+
+.container .nav ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 20px;
+}
+
+.container .nav ul li .icon-box img {
+    margin-right: 10px;
+}
+/* site-map.css */
+.container .site-map {
+    font-size: 15px;
+    overflow: hidden;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* 사이트맵 보임 */
+.container .site-map.show {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 998;
+    transition: 0.4s;
+    opacity: 1;
+}
+
+.container .site-map .site-map-header .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.container .site-map .site-map-header {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+/* site-map-nav */
+.container .site-map .site-map-nav {
+    padding: 0 25px;
+}
+
+.container .site-map .site-map-nav .depth1-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .site-map .site-map-nav .depth1 li {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.container .site-map .site-map-nav .depth1 li a{
+    color: #000;
+}
+
+/* 2단계메뉴 안보임 */
+.container .site-map .site-map-nav .depth2 {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* 2단계메뉴 보임 */
+.container .site-map .site-map-nav .depth2.show {
+    opacity: 1;
+    height: 100%;
+    transition: 0.6s;
+}
+
+.container .site-map .site-map-nav .depth2 li {
+    padding-left: 50px;
+}
+.container .site-map .site-map-nav .depth2 li a{
+    color: #000;
+}
+
+/* 로그인 아이콘 */
+.container .site-map .login-box {
+    margin-top: 200px;
+    padding: 0 25px;
+}
+
+/* btn.css */
+body {
+    position: relative;
+}
+
+.container .side-btn {
+    position: fixed;
+    left: calc(100% - 90px);
+    bottom: 100px;
+    width: 70px;
+    height: 70px;
+    background-color: #000;
+    border-radius: 20px 20px 0 20px;
+    text-align: center;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .side-btn .side-btn-box a p {
+    color: #fff;
+}
+
+.container .bottom-nav {
+    width: 100%;
+    height: 70px;
+    outline: 1px solid #ddd;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+}
+
+.container .bottom-nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 19px;
+}
