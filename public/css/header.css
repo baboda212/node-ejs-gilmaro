@@ -137,7 +137,7 @@ body {
 }
 
 .container .bottom-nav {
-    width: 100%;
+    width: 375px;
     height: 70px;
     outline: 1px solid #ddd;
     position: fixed;
