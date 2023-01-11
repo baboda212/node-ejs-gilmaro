@@ -1,0 +1,205 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Noto Sans KR', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+
+}
+ul {
+    list-style-type: none;
+}
+a {
+   color: black; 
+   text-decoration: none;
+}
+.container {
+    width: 100%;
+    /* outline: 1px solid red; */
+}
+.lnb {
+    width: 100%;
+    height: 37px;
+    height: 50px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.lnb .depth1 {
+    width: 100%;
+    display: flex;
+}
+.lnb .depth1 input {
+    font-size: 13px;
+    color: #2f2f2f;
+    background-color: transparent;
+    border: 0;
+}
+.new_arrival {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.new_arrival >h1 {
+    width: 100%;
+    height: 18px;
+    padding-left: 13px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.new_arrival .item_box {
+    width: 100%;
+    height: 540px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.new_arrival .item {
+    /* outline: 1px solid red; */
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.new_arrival .item .img_box {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin-bottom: 25px;
+}
+.new_arrival .item .img_box .bg {
+    width: 100%;
+    height: 100%;
+    
+}
+.new_arrival .item .bookMark {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.new_arrival button {
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid rgba(47,47,47,0.5);
+    border-radius: 5px;
+}
+
+.best {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.best h1 {
+    width: 100%;
+    height: 18px;
+    padding-left: 13px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.best .item_box {
+    width: 100%;
+    height: 540px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.best .item {
+    /* outline: 1px solid red; */
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.best .item .img_box {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin-bottom: 25px;
+}
+.best .item .img_box .bg {
+    width: 100%;
+    height: 100%;
+    
+}
+.best .item .bookMark {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.best button {
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid rgba(47,47,47,0.5);
+    border-radius: 5px;
+}
+
+.sale {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.sale h1 {
+    width: 100%;
+    height: 18px;
+    padding-left: 13px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.sale .item_box {
+    width: 100%;
+    height: 540px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.sale .item {
+    /* outline: 1px solid red; */
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.sale .item .img_box {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin-bottom: 25px;
+}
+.sale .item .img_box .bg {
+    width: 100%;
+    height: 100%;
+    
+}
+.sale .item .bookMark {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.sale button {
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid rgba(47,47,47,0.5);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.container .bookMark {
+    cursor: pointer;
+}
+
+.container {
+    margin-bottom: 20px;
+}

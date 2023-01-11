@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Document</title>
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="/css/sub2-1.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <div class="container">
+        <!-- header -->
+        <%- include('components/header.ejs') %> 
+        <!-- section -->
+        <div class="section">
+            <div class="item">
+                <div class="item-img">
+                    <img src="<%= products[0].imgUrl  %> " alt="우산">
+                </div> 
+                <div class="item-text">
+                    <div class="item-info-text">
+                        <h3><%= products[0].brand_en %></h3>
+                        
+                        <p><%= products[0].brand_en %> <%= products[0].type_1 %> <%= products[0].name%></p>
+                        <p>정상가: <span id="price"><%= products[0].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")%></span>원</p>
+                    </div>
+                    <div class="item-info-icon">
+                        <img src="images/찜목록.png" alt="찜하기">
+                    </div>
+                </div>
+            </div>
+            <div class="item-nav">
+                <ul>
+                    <li><a href="#" class="under">상세정보</a></li>
+                    <li><a href="#review">리뷰</a></li>
+                    <li><a href="#qna">Q&A</a></li>
+                    <li><a href="#trans">교환,반품 안내</a></li>
+                </ul>
+            </div>
+            <div class="notandum">
+                <h3>주의사항</h3>
+                <ul>
+                    <li>우/양산을 펼 때는 좌우로 흔들어서 펼쳐 주세요.</li>
+                    <li>우/양산 사용 후 원단의 탈색 방지를 위해 습기가 없는 그늘에 말려서 보관해주세요.</li>
+                    <li>우/양산 중봉이 휘지 않도록 휴대 및 보관시 주의해주세요.</li>
+                    <li>방수처리가 되지 않은 양산을 물이나 비 등을 막는 용도로는 사용을 금해주세요.</li>
+                </ul>
+            </div>
+            <div class="item-info">
+                <h3>제품정보</h3>
+                <div class="item-info-box">
+                    <img src="images/info1.png" alt="제품정보">
+                    <img src="images/info2.png" alt="제품정보">
+                    <img src="images/info3.png" alt="제품정보">
+                </div>
+            </div>
+            <div class="review">
+                <h3>리뷰</h3>
+                    <!-- 테이블형태 게시판 -->
+                <table class="review-list-box">
+                    <thead>
+                    <tr>
+                        <th>제목</th>
+                        <th>날짜</th>
+                        <th>아이디</th>                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>정보1</td>
+                        <td>정보2</td>
+                        <td>정보3</td>
+                            <form action="post" method="post">
+                            </form>
+                        </td>
+                        </tr> 
+                    </tbody>
+                </table>
+
+
+            </div>
+            <div class="qna">
+                <h3>Q&A</h3>
+                <table class="qna-list-box">
+                    <thead>
+                    <tr>
+                        <th>제목</th>
+                        <th>날짜</th>
+                        <th>아이디</th>                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>정보1</td>
+                        <td>정보2</td>
+                        <td>정보3</td>
+                            <form action="post" method="post">
+                            </form>
+                        </td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </div>
+            <div class="trans">
+                <h3>교환,반품 안내</h3>
+                <ul>
+                    <li>교환/반품 신청은 배송완료 후 7일 이내 가능합니다.</li>
+                    <li>변심 반품의 경우 왕복배송비를 차감한 금액이 환불되며, 제품 및 포장 상태가 재판매 가능하여야 합니다.</li>
+                    <li>상품 불량인 경우는 배송비를 포함한 전액이 환불됩니다.</li>
+                    <li>출고 이후 환불요청 시 상품 회수 후 처리됩니다.</li>
+                    <li>주문제작 상품은 변심으로 인한 반품/환불이 불가합니다.</li>
+                    <li>완제품으로 수입된 상품의 경우 A/S가 불가합니다.</li>
+                    <li>상품페이지에 교환/환불/AS에 대한 브랜드 개별기준이 있는 경우에는 해당 내용이 우선 적용 됩니다.</li>
+                </ul>
+            </div>
+            <div class="deliver">
+                <h3>배송정보</h3>
+                <p>결제 완료 후 평균 3일 이내 출고(공휴일제외) 50,000원 미만 구매시 배송비 3,000원</p>
+            </div>
+            <div class="charge">
+                <h3>결제혜택</h3>
+                <p>삼성/롯데카드 10% 즉시 할인(70,000원 이상 구매 시 적용)</p>
+            </div>
+        </div>
+
+        <!-- cashier-btn 더보기 -->
+        <div class="cashier">
+            <div class="cashier-close">
+                <img src="images/arrow-down.png" alt="닫기">
+            </div>
+            <div class="colors">
+                <p>- 색상 선택 -</p>
+                <img src="images/arrow-down.png" alt="아래">
+            </div>
+            <!-- 클릭시 등장 -->
+            <ul class="colors-more">
+                <li class="colors-select">
+                    <div class="color-box"> </div>
+                    <p>Black</p>
+                </li>
+                <li class="colors-select">
+                    <div class="color-box"> </div>
+                    <p>White</p>
+                </li>
+                <li class="colors-select">
+                    <div class="color-box"> </div>
+                    <p>Navy</p>
+                </li>
+            </ul>
+            
+            <!-- <div class="colors-more">
+                <div class="colors-select">
+                    <div class="color-box"> </div>
+                    <p>Black</p>
+                </div>
+                <div class="colors-select2">
+                    <div class="color-box"> </div>
+                    <p>White</p>
+                </div>
+                <div class="colors-select3">
+                    <div class="color-box"> </div>
+                    <p>Navy</p>
+                </div>
+            </div> -->
+            <div class="check">
+                <div class="check-icon">
+                    <img src="images/닫기버튼.png" alt="확인창닫기">
+                </div>
+                <div class="check-text">
+                    <p><%= products[0].brand_en %> <%= products[0].type_1 %> (<%= products[0].name%>)/<span id="bringcolor">Black</span></p>
+                </div>
+                <div class="itemea">
+                    <div class="eabox">
+                        <input type="button" onclick="count('minus')" value="-" class="eaminus">
+                        <div id="ea">
+                            <p>1</p>
+                        </div>
+                        <input type="button" onclick="count('plus')" value="+" class="eaplus">
+                    </div>
+                    <div id="paycheck">
+                        <p><%= products[0].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") %>원 </p>
+                    </div>
+                </div>
+                <div class="check-review">
+                    <p>총 수량 1개</p>
+                    <div class="check-price">
+                        <p>총 금액</p>
+                        <p id="allprice"><%= products[0].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") %>원</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+        <!-- cashier-btn- -->
+        <div class="cashier-btn">
+            <div class="basket-btn">
+                <a href="#">
+                    <img src="images/장바구니담기.png" alt="장바구니담기">
+                </a>
+            </div>
+            <div class="buy-btn">
+                <button type="submit">
+                    <img src="images/바로구매하기.png" alt="바로구매하기">
+                </button>
+            </div>
+        </div>
+
+
+
+
+
+        <%- include('components/footer.ejs') %> 
+        <%- include('components/bottomNav.ejs') %>
+        <%- include('components/sitemap.ejs') %> 
+    </div>
+
+    <script src="js/sitemap.js"></script>
+    <script src="js/check.js"></script>
+</body>
+</html>

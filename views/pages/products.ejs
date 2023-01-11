@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 제이쿼리 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css"> 
+</head>
+<body>
+    
+    <div class="container">
+        <%- include('components/header.ejs') %> 
+        <div class="lnb">
+            <ul class="depth1">
+                <li><form action="/search" method="post"><input name="brand" type="submit" value="RENOMA"></form></li>
+                <li><form action="/search" method="post"><input name="brand" type="submit" value="MOOMIN"></form></li>
+                <li><form action="/search" method="post"><input name="brand" type="submit" value="GIORGIOFERRI"></form></li>
+                <li><form action="/search" method="post"><input name="brand" type="submit" value="MUSPORTS"></form></li>
+                <li><form action="/search" method="post"><input name="brand" type="submit" value="anthology"></form></li>
+            </ul>
+        </div>
+        <div class="new_arrival">
+            <h1>NEW ARRIVAL</h1>
+            <div class="item_box">
+                <% for(i=0; i<8; i++) {%>
+                   <div class="item">      
+                        <div class="img_box">
+                            <a href="productsdetail">
+                                <img class="bg" src="<%=products[i].imgUrl%>" alt="제품이미지">
+                            </a>
+                            <img data-items="<%=products[i].id%>" class='bookMark' src="images/bookMark.svg" alt="북마크">
+                        </div>
+                        <p><%=products[i].brand_en%></p>
+                        <p><%=products[i].type_1%> <%=products[i].name%></p>  
+                        <P>정상가 : <%=products[i].price%>원</P>
+                    </div>    
+                <%}%>    
+            </div>              
+            <button>더보기</button>
+        </div>
+
+        <div class="best">
+            <h1>BEST</h1>
+            <div class="item_box">
+                <% for(i=0; i<8; i++) {%>
+                   <div class="item">      
+                        <div class="img_box">
+                            <img class="bg" src="<%=products[i].imgUrl%>" alt="">
+                            <img data-items="<%=products[i].name%>" class='bookMark' src="images/bookMark.svg" alt="북마크">
+                        </div>
+                        <p><%=products[i].brand_en%></p>
+                        <p><%=products[i].type_1%> <%=products[i].name%></p>  
+                        <P>정상가 : <%=products[i].price%>원</P>
+                    </div>    
+                <%}%>    
+            </div>              
+            <button>더보기</button>
+        </div>
+        
+        <div class="sale" data-item="<%=products.length%>">
+            <h1>SALE</h1>
+            <div class="item_box">
+                <% for(i=0; i<products.length; i++) {%>
+                   <div class="item">      
+                        <div class="img_box">
+                            <img class="bg" src="<%=products[i].imgUrl%>" alt="">
+                            <img data-items="<%=products[i].name%>" class='bookMark' src="images/bookMark.svg" alt="북마크">
+                        </div>
+                        <p><%=products[i].brand_en%></p>
+                        <p><%=products[i].type_1%> <%=products[i].name%></p>  
+                        <P>정상가 : <%=products[i].price%>원</P>
+                    </div>    
+                <%}%>    
+            </div>              
+            <button>더보기</button>
+        </div>
+        <%- include('components/footer.ejs') %> 
+        <%- include('components/bottomNav.ejs') %>
+        <%- include('components/sitemap.ejs') %> 
+
+    </div>    
+    <script src="js/sitemap.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

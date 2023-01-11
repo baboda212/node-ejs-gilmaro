@@ -1,0 +1,334 @@
+/* sub2-1.css */
+.container .section .item .item-img {
+    text-align: center;
+}
+.container .section .item .item-img img{
+    width: 375px;
+}
+
+.container .section .item .item-text .item-info-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.container .section .item .item-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* h3  */
+.container .section .item .item-text .item-info-text h3,
+.container .section .notandum h3,
+.container .section .item-info h3,
+.container .section .trans h3,
+.container .section .deliver h3,
+.container .section .charge h3,
+.cashier .check .itemea #paycheck h3,
+.container .section .review h3,
+.container .section .qna h3 {
+    font-size: 20px;
+}
+
+.container .section .item .item-text .item-info-text p:not(.price) {
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+.container .section .item-nav {
+    outline: 1px solid black;
+    margin: 25px 0 30px 0;
+}
+
+.container .section .item-nav .under {
+    text-decoration: underline;
+}
+
+.container .section .item-nav ul {
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.container .section .item-nav ul li a {
+    color: #2f2f2f;
+    font-size: 13px;
+}
+
+
+/* 주의사항 */
+.container .section .notandum {
+    margin: 0 13px 30px 13px;
+}
+
+.container .section .notandum ul {
+    list-style-type: disc;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.container .section .notandum ul li {
+    font-size: 14px;
+}
+
+/* 제품정보 */
+.container .item-info {
+    padding: 0 20px;
+}
+
+.container .item-info .item-info-box {
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .item-info img {
+    width: 335px;
+    
+}
+
+/* 리뷰 */
+.container .review {
+    margin: 50px 0;
+    padding: 0 20px;
+}
+
+/* 테이블 */
+
+.container .review-list-box,
+.container .qna-list-box {
+    width: 100%;
+    border-top: 1px solid #444;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .container table th, .container table td {
+    border-bottom: 1px solid #444;
+    padding: 10px;
+  }
+  
+  .container table tr {
+    height: 30px;
+  }
+
+
+
+/* Q&A */
+.container .qna {
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+/* 교환반품 */
+.container .trans {
+    padding: 0 20px;
+    margin-bottom: 50px;
+}
+
+.container .trans ul {
+    margin-top: 10px;
+    list-style-type: disc;
+    padding: 0 20px;
+}
+
+.container .trans ul li {
+    font-size: 14px;
+}
+
+/* 배송정보 */
+.container .deliver {
+    padding: 0 20px;
+}
+
+.container .deliver p {
+    margin: 20px 20px 50px 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* 결제혜택 */
+
+.container .charge {
+    padding: 0 20px;
+}
+
+.container .charge p {
+    margin: 20px 20px 100px 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* cashier-btn */
+.container .cashier-btn {
+    position: fixed;
+    bottom: 20px;
+    width: 375px;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    outline: 1px solid rgba(47, 47, 47, 0.2);
+    background-color: #fff;
+}
+
+.cashier {
+    width: 100%;
+    height: 100%;
+    outline: 1px solid rgba(47, 47, 47, 0.2);
+}
+
+.cashier button {
+    border-style: none;
+}
+
+.container .cashier-btn .buy-btn button {
+    border-style: none;
+}
+
+/* 바로구매버튼 클릭시 더보기창 */
+
+.cashier {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: fixed;
+    bottom: 100px;
+}
+
+.cashier.show {
+    max-height: 100%;
+    height: 480px;
+    opacity: 1;
+    /* background-color:rgba(47, 47, 47, 0.1); */
+    background-color: #fff;
+    z-index: 997;
+}
+
+.cashier .cashier-close {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cashier .colors {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+/* 색상 선택 */
+.cashier .colors-more {
+    border: 1px solid black;
+    border-radius: 5px;
+    align-items: center;
+    padding: 0 20px;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.cashier .colors-more.show {
+    height: 100%;
+    opacity: 1;
+    transition: 0.4s;
+}
+
+.cashier .colors-more .colors-select,
+.cashier .colors-more .colors-select2,
+.cashier .colors-more .colors-select3 {
+    padding-top: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.cashier .colors p {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.color-box {
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+}
+
+.cashier .check .check-icon {
+    text-align: right;
+    margin-top: 40px;
+    padding-top: 20px;
+    padding-right: 20px;
+    border-top: 1px solid #000;
+    
+}
+
+.cashier .check .check-text {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.cashier .check .itemea {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 50px;
+}
+
+.cashier .check .itemea .eabox {
+    display: flex;
+
+}
+
+.cashier .check .itemea .eabox .eaminus,
+.cashier .check .itemea .eabox #ea,
+.cashier .check .itemea .eabox .eaplus {
+    outline: 1px solid black;
+}
+
+.cashier .check .itemea .eabox .eaminus,
+.cashier .check .itemea .eabox .eaplus {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.cashier .check .itemea .eabox #ea {
+    text-align: center;
+    width: 43px;
+    height: 30px;
+}
+
+
+.cashier .check .check-review {
+    width: 100%;
+    height: 50px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.cashier .check .check-review .check-price {
+    display: flex;
+    gap: 15px;
+}
+
+/* 상세보기 페이지 전용 구매nav */

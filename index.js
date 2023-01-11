@@ -42,6 +42,22 @@ app.get('/create', async(req,res)=>{
     })
     res.redirect('/')
 })
+//search 라우팅
+app.post('/search', async(req, res)=>{
+    let brand = req.body.brand;
+    console.log(brand)
+    if(brand=='MUSPORTS'||brand=='anthology') {
+        res.send("<script>alert('제품이 없습니다.'); window.location.replace('/');</script>")
+    }else {
+        let products = await Products.findAll({
+            where:{
+                brand_en: brand
+            }
+        })
+        console.log(products)
+        res.render('pages/products.ejs', {products})
+    }
+})
 
 //home 라우팅
 app.get('/',async (req, res) => {
@@ -58,6 +74,22 @@ app.get('/about', function(req, res){
 //brands 라우팅
 app.get('/brands', function(req, res){
     res.render('pages/brands.ejs');
+})
+
+//products 라우팅
+app.get('/products', async(req, res) => {
+    let products = await Products.findAll();
+    res.render('pages/products.ejs', {products})
+})
+
+//productsdetail 라우팅
+app.get('/productsdetail', async(req,res) => {
+    let products = await Products.findAll();
+    /* console.log(JSON.stringify(products,null,2))
+    console.log(products[0]) */
+    let numberEl = req.query.ea
+    console.log(numberEl)
+    res.render('pages/productsdetail.ejs', {products, numberEl})
 })
 
 //pay 라우팅
