@@ -138,3 +138,6 @@ body{
     margin-top: 20px;
     margin-left: 90px;
 }
+.login a{
+    text-align: center;
+}
