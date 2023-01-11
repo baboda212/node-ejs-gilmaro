@@ -1,20 +1,20 @@
 /* check.js */
 
 /* 색상 선택 */
-$('.wrap .cashier .colors').on('click', function(){
-    $('.wrap .cashier .colors-more').toggleClass('show')
+$('.container .cashier .colors').on('click', function(){
+    $('.container .cashier .colors-more').toggleClass('show')
 })
 
 /* 색상 옵션 선택시 */
-$('.wrap .cashier .colors-more .colors-select').on('click', function(){
+$('.container .cashier .colors-more .colors-select').on('click', function(){
   let text = $(this).html()
   let pEl = $(this).text()
   console.log(text)
   console.log(pEl)
-  $('.wrap .cashier .colors p').html(text);
-  $('.wrap .check .check-text #bringcolor').html(pEl);
+  $('.container .cashier .colors p').html(text);
+  $('.container .check .check-text #bringcolor').html(pEl);
   /* 색상 옵션 선택시 선택창 사라지기 */
-  $('.wrap .cashier .colors-more').removeClass('show')
+  $('.container .cashier .colors-more').removeClass('show')
 })
 
 

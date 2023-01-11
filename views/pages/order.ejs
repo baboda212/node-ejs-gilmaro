@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="/css/order.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <!-- header -->
+        <%- include('components/o-header.ejs') %>
+        <!-- section -->
+        <div class="review">
+            <!-- <h3>주문의뢰</h3> -->
+            <!-- 주문발주 -->
+            <div class="notice">
+                <form action="/order-product" method="post">
+                    <div class="name-box">
+                        <label for="name">이름(필수)</label>
+                        <input type="text" id="name" name="name" placeholder="작성자명" required>
+                    </div>
+                    <div class="email-box">
+                        <label for="email">이메일(필수)</label>
+                        <input type="email" id="email" name="email" placeholder="이메일" required>
+                    </div>
+                    <div class="phone-box">
+                        <label for="phone">연락처(필수)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="연락처" required>
+                    </div>
+                    <div class="title-box">
+                        <label for="title">제목</label>
+                        <input type="text" id="title" name="title" placeholder="제목">
+                    </div>
+                
+                  <label for="post">내용</label>
+                  <textarea name="post" id="post" cols="30" rows="10" placeholder="여기에 글을 작성해주세요" maxlength="500" spellcheck = "false" required>
+                    ※제공된 양식에 맞춰 작성해주세요.
+
+    상품이름:
+    색상:
+    주문개수:
+    각인(필요시): 
+    회사로고 또는 글자각인 가능
+
+                  </textarea>
+                  <div class="notice-box">
+                    <button type="submit">전송하기</button>
+                  </div>
+                  
+                </form>
+                       
+                
+        </div>
+
+
+        <!-- footer -->
+        
+        <%- include('components/o-footer.ejs') %> 
+        <%- include('components/bottomNav.ejs') %>
+        <%- include('components/sitemap.ejs') %> 
+    </div>
+
+    <script src="main.js"></script>
+    <script src="check.js"></script>
+</body>
+</html>

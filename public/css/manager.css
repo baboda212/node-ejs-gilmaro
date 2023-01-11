@@ -1,0 +1,33 @@
+/* manager.css */
+
+.container .review h3 {
+    font-size: 20px;
+    margin: 50px 0 20px 0;
+    padding: 0 20px;
+}
+
+
+
+/* 테이블 */
+.container .review-list-box {
+    max-width: 100%;
+    border-top: 1px solid #444;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 30px;
+    margin: 0 auto;
+  }
+
+.container .review-list-box tbody {
+    font-size: 12px;
+}
+
+  
+.container table th, .container table td {
+    border-bottom: 1px solid #444;
+    padding: 10px;
+}
+
+.container table tr {
+    height: 30px;
+}

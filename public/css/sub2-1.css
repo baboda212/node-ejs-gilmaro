@@ -165,6 +165,7 @@
 }
 
 /* cashier-btn */
+.container 
 .container .cashier-btn {
     position: fixed;
     bottom: 20px;

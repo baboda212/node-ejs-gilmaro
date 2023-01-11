@@ -43,7 +43,7 @@ btnEls[2].addEventListener('click',()=>{
 })
 
 let markEl = document.querySelectorAll('.bookMark');
-let basketEl = document.getElementById('basket');
+// let basketEl = document.getElementById('basket');
 let bookArr = [];
 markEl.forEach(e=>{
     e.addEventListener('click',()=>{

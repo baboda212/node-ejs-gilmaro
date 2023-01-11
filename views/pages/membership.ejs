@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menbership</title>
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="css/membership.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <div class="container">
+        <!-- header -->
+        <%- include('components/header.ejs') %> 
+        <form action="/create" method="post" class="table">
+            <div class="infoName">
+                <label for="name" class="label">이름(필수)</label><br>
+                <input type="text" id="name" name="info" class="infoName-name" required>
+            </div>
+            <div class="infoTell">
+                <label for="name">연락처(필수)</label>
+                <input type="tel" pattern="[0][1][0]-[0~9]{3,4}-[0~9]{4}" id="tell" name="tell" placeholder="010-0000-0000" class="infoTell-tell" required>
+            </div>
+            <div class="infoEmail">
+                <label for="name">이메일주소(필수)</label>
+                <input type="email" id="email" name="email" class="infoEmail-email" required>
+            </div>
+            <div class="infoId">
+                <label for="name">아이디(필수)</label><br>
+                <input type="text" id="userId" name="userId" class="infoId-id" required>
+                <button id="idcheck" type="button" class="idcheck">아이디 중복확인</button>
+            </div>
+            <div class="infoPswd">
+                <label for="name">비밀번호</label>
+                <input type="password" id="pwd" name="pwd" placeholder="영문 대소문자 및 특수기로 포함 8자 이상" class="infoPswd-pswd" required>
+            </div>
+            <div class="infoPswdc">
+                <label for="name">비밀번호 확인</label>
+                <input type="password" id="pswdch" placeholder="한번 더 입력해 주시기 바랍니다." class="infoPswdc-pswdc" required>
+            </div>
+            <button id="join" type="submit" class="membership">회원가입</button>
+        </form>
+
+
+
+
+        <%- include('components/footer.ejs') %> 
+        <%- include('components/bottomNav.ejs') %>
+        <%- include('components/sitemap.ejs') %>
+    </div>
+    <script src="/js/membership.js"></script>
+</body>
+</html>

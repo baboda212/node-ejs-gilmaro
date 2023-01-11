@@ -33,14 +33,15 @@
                 <% for(i=0; i<8; i++) {%>
                    <div class="item">      
                         <div class="img_box">
-                            <a href="productsdetail">
-                                <img class="bg" src="<%=products[i].imgUrl%>" alt="제품이미지">
-                            </a>
-                            <img data-items="<%=products[i].id%>" class='bookMark' src="images/bookMark.svg" alt="북마크">
-                        </div>
-                        <p><%=products[i].brand_en%></p>
-                        <p><%=products[i].type_1%> <%=products[i].name%></p>  
-                        <P>정상가 : <%=products[i].price%>원</P>
+                                <a href="productsdetail/<%=products[i].id%>">
+                                    <img class="bg" src="<%=products[i].imgUrl%>" alt="제품이미지">
+                                </a>
+                                <img data-items="<%=products[i].id%>" class='bookMark' src="images/bookMark.svg" alt="북마크">
+                                </div>
+                                <p><%=products[i].brand_en%></p>
+                                <p><%=products[i].type_1%> <%=products[i].name%></p>  
+                                <P>정상가 : <%=products[i].price%>원</P>                                
+                            
                     </div>    
                 <%}%>    
             </div>              

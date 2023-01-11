@@ -78,3 +78,63 @@ body{
 .footer .bold {
     font-weight: 700;
 }
+
+.bookMarkList {
+    width: 100vw;
+    height: 75vh;
+    overflow: scroll;
+    flex-wrap: wrap;
+    position: fixed;
+    left: 0;
+    top: 15%;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    display: none;
+}
+.bookMarkList h1 {
+    width: 100%;
+    height: 18px;
+    padding-left: 13px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.login {
+    width: 375px;
+    height: 300px;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: fixed;
+    top: 100px;
+    padding: 20px;
+    
+}
+
+.login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login .login-box input {
+    height: 40px;
+    border: 1px solid #2f2f2f;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 330px;
+    
+}
+
+.login button {
+    width: 150px;
+    height: 60px;
+    background-color: #2f2f2f;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 20px;
+    margin-left: 90px;
+}

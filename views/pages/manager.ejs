@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/btn.css">
+    <link rel="stylesheet" href="/css/site-map.css">
+    <link rel="stylesheet" href="/css/manager.css">
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <!-- header -->
+        <%- include('components/m-header.ejs') %>
+        
+            <!-- section -->
+            <div class="review">
+                <h3>주문의뢰</h3>
+                    <!-- 테이블형태 게시판 -->
+                <table class="review-list-box">
+                    <thead>
+                    <tr>
+                        <th>순번</th>
+                        <th>이름</th>
+                        <th>이메일주소</th>
+                        <th>연락처</th>
+                        <th>내용</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <% order.forEach(order => {%>
+                            <tr>
+                                <td><%= order.id %></td>
+                                <td><%= order.name %></td>
+                                <td><%= order.email %></td>
+                                <td><%= order.phone %></td>
+                                <td>더보기</td>
+                                </tr> 
+                            <%}) %>
+                        
+                    </tbody>
+                </table>
+        </div>
+
+
+        <!-- footer -->
+        <%- include('components/o-footer.ejs') %> 
+        <%- include('components/bottomNav.ejs') %>
+        <%- include('components/sitemap.ejs') %> 
+    </div>
+
+    <script src="main.js"></script>
+    <script src="check.js"></script>
+</body>
+</html>

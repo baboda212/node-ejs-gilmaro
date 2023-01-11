@@ -11,8 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- css -->
     <link rel="stylesheet" href="/css/sub2-1.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
 </head>
 <body>
     <div class="container">
@@ -32,7 +32,7 @@
                         <p>정상가: <span id="price"><%= products[0].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")%></span>원</p>
                     </div>
                     <div class="item-info-icon">
-                        <img src="images/찜목록.png" alt="찜하기">
+                        <img src="/images/찜목록.png" alt="찜하기">
                     </div>
                 </div>
             </div>
@@ -56,9 +56,9 @@
             <div class="item-info">
                 <h3>제품정보</h3>
                 <div class="item-info-box">
-                    <img src="images/info1.png" alt="제품정보">
-                    <img src="images/info2.png" alt="제품정보">
-                    <img src="images/info3.png" alt="제품정보">
+                    <img src="/images/info1.png" alt="제품정보">
+                    <img src="/images/info2.png" alt="제품정보">
+                    <img src="/images/info3.png" alt="제품정보">
                 </div>
             </div>
             <div class="review">
@@ -133,11 +133,11 @@
         <!-- cashier-btn 더보기 -->
         <div class="cashier">
             <div class="cashier-close">
-                <img src="images/arrow-down.png" alt="닫기">
+                <img src="/images/arrow-down.png" alt="닫기">
             </div>
             <div class="colors">
                 <p>- 색상 선택 -</p>
-                <img src="images/arrow-down.png" alt="아래">
+                <img src="/images/arrow-down.png" alt="아래">
             </div>
             <!-- 클릭시 등장 -->
             <ul class="colors-more">
@@ -171,7 +171,7 @@
             </div> -->
             <div class="check">
                 <div class="check-icon">
-                    <img src="images/닫기버튼.png" alt="확인창닫기">
+                    <img src="/images/닫기버튼.png" alt="확인창닫기">
                 </div>
                 <div class="check-text">
                     <p><%= products[0].brand_en %> <%= products[0].type_1 %> (<%= products[0].name%>)/<span id="bringcolor">Black</span></p>
@@ -204,12 +204,12 @@
         <div class="cashier-btn">
             <div class="basket-btn">
                 <a href="pay">
-                    <img src="images/장바구니담기.png" alt="장바구니담기">
+                    <img src="/images/장바구니담기.png" alt="장바구니담기">
                 </a>
             </div>
             <div class="buy-btn">
                 <button type="submit">
-                    <img src="images/바로구매하기.png" alt="바로구매하기">
+                    <img src="/images/바로구매하기.png" alt="바로구매하기">
                 </button>
             </div>
         </div>
@@ -223,7 +223,7 @@
         <%- include('components/sitemap.ejs') %> 
     </div>
 
-    <script src="js/sitemap.js"></script>
-    <script src="js/check.js"></script>
+    <script src="/js/sitemap.js"></script>
+    <script src="/js/check.js"></script>
 </body>
 </html>

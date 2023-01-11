@@ -47,4 +47,64 @@ let Products = sequelize.define('Products', {
     }
 });
 
-module.exports = {sequelize, Products};
+// 테이블 생성
+const Order = sequelize.define('Order', {
+    // create(속성 정의)
+    name: {
+        type:DataTypes.STRING,
+        allowNull: false,
+        defaultValue:''
+    },
+    email: {
+        type:DataTypes.STRING,
+        allowNull: false,
+        defaultValue:''
+    },
+    phone: {
+        type:DataTypes.STRING,
+        allowNull: false,
+        defaultValue:''
+    },
+    title: {
+        type:DataTypes.STRING,
+        allowNull: false,
+        defaultValue:''
+    }
+})
+
+// 회원가입 테이블
+const User = sequelize.define('User', {
+    userIds: {
+        type:DataTypes.STRING,
+        allowNull: false,
+        defaultValue:'',
+    },
+    userPwd: {
+        type:DataTypes.STRING,
+        allowNull: false,
+        defaultValue:'',
+    },
+    userEmail: {
+        type:DataTypes.STRING,
+        allowNull: false,
+        defaultValue:'',
+    },
+    userPhone: {
+        type:DataTypes.STRING,
+        allowNull: false,
+        defaultValue:'',
+    },
+    userName: {
+        type:DataTypes.STRING,
+        allowNull: false,
+        defaultValue:'',
+    },
+    userCart: {
+        type:DataTypes.STRING,
+        allowNull: true,
+        defaultValue:'',
+    }
+
+})
+
+module.exports = {sequelize, Products, Order, User};
