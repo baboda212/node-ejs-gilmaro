@@ -168,6 +168,7 @@ app.post('/login' , async function(req, res){
 
 // 장바구니담기
 
+//검색
 
 
 const port = 3001;

@@ -27,10 +27,25 @@ ul li{
     justify-content: space-between;
     padding: 7px 20px;
 }
+.container .nav .icon-box{
+    /* outline: 1px solid red; */
+    display: flex;
+}
+.container .nav .icon-box button{
+    background-color: transparent;
+    border: none;
+}
 
+/* 검색버튼 */
+#search_input{
+    width: 6rem;
+    padding: 15px 5px 0 5px;
+    border-radius: 5px;
+}
 .container .nav ul li .icon-box img {
     margin-right: 10px;
 }
+
 /* site-map.css */
 .container .site-map {
     font-size: 15px;
