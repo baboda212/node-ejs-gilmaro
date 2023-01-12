@@ -53,7 +53,7 @@ ul li{
 }
 
 /* site-map.css */
-.container .site-map {
+.site-map {
     font-size: 15px;
     overflow: hidden;
     opacity: 0;
