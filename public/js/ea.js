@@ -46,7 +46,7 @@ eaplus.forEach(e=>{
         let newPrice= eval(allprice.innerHTML)*nowEa
         // newPrice = newPrice.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     
-        allprice1.innerHTML = newPrice+"원"
+        allprice1.innerHTML = (`${newPrice}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + '원';
         allprice2.value = newPrice ;
         
         let p = 0;
@@ -75,7 +75,7 @@ eaminus.forEach(e=>{
             let newPrice= eval(allprice.innerHTML)*nowEa
             // newPrice = newPrice.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
         
-            allprice1.innerText = newPrice+"원"
+            allprice1.innerText = (`${newPrice}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + '원';
             allprice2.value = newPrice
             allprice2.dataset.item = newPrice;
 
