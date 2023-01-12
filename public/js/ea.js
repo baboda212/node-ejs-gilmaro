@@ -55,7 +55,7 @@ eaplus.forEach(e=>{
            console.log('p는',p)
         })
         totalEl.innerHTML=p
-        realtotalEl.innerHTML = `${p+3000}원`;
+        realtotalEl.innerHTML = (`${p+3000}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     })
 })
 // 마이너스 버튼 함수
@@ -89,7 +89,7 @@ eaminus.forEach(e=>{
            console.log('p는',p)
         })
         totalEl.innerHTML=p
-        realtotalEl.innerHTML = `${p+3000}원`;
+        realtotalEl.innerHTML = (`${p+3000}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     })
 })
 
