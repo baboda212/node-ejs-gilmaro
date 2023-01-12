@@ -46,6 +46,7 @@ ul li{
     width: 6rem;
     padding: 15px 5px 0 5px;
     border-radius: 5px;
+    display: none;
 }
 .container .nav ul li .icon-box img {
     margin-right: 10px;
