@@ -101,3 +101,8 @@ a{
     border-radius: 5px;
     margin: 10px auto;
 }
+
+/* input 박스 숨김 */
+.reAll {
+    display: none;
+}

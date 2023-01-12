@@ -27,7 +27,9 @@ $('.container .cashier .cashier-close').on('click', function(){
 /* bottom-nav 클릭시 */
 $('.bottom-nav').on('click', function(){
     $(this).css('bottom', '0');
+    $(this).css('backgroundColor', '#fff');
     $('.container .side-btn').css('bottom', '180px');
     $('.container .cashier-btn').css('bottom', '70px');
     $('.container .cashier').css('bottom', '150px');
 })
+

@@ -59,11 +59,14 @@ let loginBox = document.getElementsByClassName('login')[0];
 let userInfoEl = document.getElementById('user-info');
 
 userInfoEl.addEventListener('click', function(){
-    let check = loginBox.style.display
-    if(check == 'none') {
+    const cookie = document.cookie;
+    // console.log(Boolean(cookie));
+    
+    if(Boolean(cookie) == false) {
         loginBox.style.display = 'block'
     } else (
-        loginBox.style.display = 'none'
+        alert('로그아웃하시겠습니까?'),
+        window.location.replace('/logout')
     )
 })
 

@@ -7,6 +7,11 @@
 body{
     font-family: 'Noto Sans KR', sans-serif, 'Roboto', sans-serif;
 }
+
+a {
+    text-decoration: none;
+    color: #000;
+}
 .container{
     max-width: 375px;
     margin: 0 auto;
@@ -154,10 +159,10 @@ body {
 .container .bottom-nav {
     width: 375px;
     height: 70px;
-    outline: 1px solid #ddd;
+    outline: 1px solid #2f2f2f;
     position: fixed;
-    bottom: 0;
-    background-color: #fff;
+    bottom: -50px;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .container .bottom-nav ul {

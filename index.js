@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
 const ejs = require('ejs');
+const cookieParser = require('cookie-parser'); // 쿠키추출 및 사용 모듈
 let {sequelize, Products, Order, User} = require('./products.js');
 const { where } = require('sequelize');
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+app.use(cookieParser()); // 쿠키사용
 
 //ejs 를  view엔진으로 설정하기
 app.set('view engine', 'ejs');
@@ -38,6 +40,12 @@ app.post('/search', async(req, res)=>{
 app.get('/',async (req, res) => {
     let products = await Products.findAll();
     // console.log(JSON.stringify(products,null,2));
+    
+    // console.log('Cookies:', req.cookies) // 쿠키가 서버에떠다니는가?
+    const cookie = req.cookies
+    let re = Object.values(cookie); // 쿠키의 value 값 반환 여기선 true(로그인해서 id가 참이라)
+    console.log(re);
+    
     res.render('pages/index.ejs', {products});
 })
 
@@ -63,18 +71,59 @@ app.get('/productsdetail/:id', async(req,res) => {
     let products = await Products.findAll({where: {id:id}});
     /* console.log(JSON.stringify(products,null,2))
     console.log(products[0]) */
-    
+    console.log('Cookies:', req.cookies)
     res.render('pages/productsdetail.ejs', {products})
 })
 
-//pay 라우팅
-app.get('/pay', function(req, res){
-    res.render('pages/pay.ejs', );
+//pay 라우팅 =>장바구니
+app.get('/pay', async function(req, res){
+    const cookie = req.cookies.user;
+    const userCart = await User.findAll({where: {userIds:cookie}})
+ 
+    const cartArr = userCart[0].userCart.split(',')
+    // console.log(cartArr);
+    const products = [];
+    let arr = await Products.findAll({raw : true});
+    
+    for (let i = 0; i < cartArr.length; i++) {
+         products.push(arr[[i]])
+    }
+    console.log(products);
+   /*  if(checkId == cookie) {
+        res.render('pages/orderdetail.ejs');    
+    } else {
+        res.send(`<script>alert("로그인이 필요한 페이지입니다.");window.location.replace('/products')</script>`)
+    } */
+    res.render('pages/pay.ejs', {products} );
 })
 
-//orderdetail 라우팅
-app.get('/orderdetail', function(req, res){
-    res.render('pages/orderdetail.ejs');
+
+// cart
+app.post('/cart/:id', async function(req, res){
+    const cookie = req.cookies.user;
+    console.log(cookie)
+    const cartEl = req.params.id;
+
+    const userCart = await User.findAll({where: {userIds:cookie}})
+    console.log(userCart[0].userCart);
+    const cartArr = []
+
+    cartArr.push(userCart[0].userCart)
+    if(cartArr.indexOf(cartEl) < 0 ) {
+       const uCart =  userCart[0].userCart + ',' + cartEl;
+       await User.update({
+        userCart: uCart
+
+       },{where: {userIds:cookie}});
+       res.redirect('/')  
+    } else {
+        res.redirect('/');
+    }
+    
+    
+    // let re = Object.values(cookie); // 쿠키의 value 값 반환 여기선 true(로그인해서 id가 참이라)
+    console.log(cookie);
+    
 })
 
 app.post('/data', async(req,res)=>{
@@ -107,6 +156,11 @@ app.post('/order-product', async function(req,res){
 /* 관리자페이지 */
 app.get('/manager',  async function(req, res){
     let order = await Order.findAll();
+    if(checkId == cookie) {
+        res.render('pages/orderdetail.ejs');    
+    } else {
+        res.send(`<script>alert("로그인이 필요한 페이지입니다.");window.location.replace('/products')</script>`)
+    }
     res.render('pages/manager.ejs',{order})
 })
 
@@ -154,14 +208,26 @@ app.post('/login' , async function(req, res){
         let checkPwd = checkId[0].userPwd;
         console.log(checkPwd);
         if(checkPwd == login_userPwd) {
-            res.redirect('/')
+            console.log('로그인성공')
+            res.cookie("user", login_userId, { // res에 쿠키속성부여 .cookie('쿠키이름', 가져갈값, {속성})
+                // expires: new Date(Date.now() + 900000), // 얼마의시간동안 가지고있을것인가
+                // httpOnly: true // js접근 막음 오로지 웹서버데이터로만 움직일수있음
+            });
+            
+            res.redirect('/') // 로그인성공시
+
         } else {
             res.send("<script>alert('비밀번호가 옳지 않습니다.'); window.location.replace('/');</script>")
         }
         
     }
-
      // res.redirect('/membership')
+})
+
+// 로그아웃
+app.get('/logout', function(req,res) {
+    res.clearCookie("user")
+    res.redirect("/")
 })
 
 
