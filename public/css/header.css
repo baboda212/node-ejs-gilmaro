@@ -134,6 +134,10 @@ ul li{
 .site-map .login-box {
     margin-top: 200px;
     padding: 0 25px;
+    width: 375px;   
+}
+.site-map .login-box img{
+   margin-left: 0; 
 }
 
 /* btn.css */
