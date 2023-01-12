@@ -27,9 +27,9 @@ reAllElArr.forEach(e=>{
    p+=eval(e.value )
    console.log('p는',p)
 })
-totalEl.innerHTML=(`${p}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+totalEl.innerHTML=(`${p}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + '원';
 let  realtotalEl = document.getElementById('realtotal');
-        realtotalEl.innerHTML = (`${p+3000}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+        realtotalEl.innerHTML = (`${p+3000}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + '원';
 
 // 플러스 버튼 함수
 eaplus.forEach(e=>{
@@ -47,15 +47,15 @@ eaplus.forEach(e=>{
         // newPrice = newPrice.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     
         allprice1.innerHTML = newPrice+"원"
-        allprice2.value = newPrice
+        allprice2.value = newPrice ;
         
         let p = 0;
         reAllElArr.forEach(e=>{ 
            p+=eval(e.value )
            console.log('p는',p)
         })
-        totalEl.innerHTML=(`${p}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-        realtotalEl.innerHTML = (`${p+3000}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+        totalEl.innerHTML=(`${p}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + '원';
+        realtotalEl.innerHTML = (`${p+3000}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") +'원';
     })
 })
 // 마이너스 버튼 함수
@@ -88,8 +88,8 @@ eaminus.forEach(e=>{
            p+=eval(e.value )
            console.log('p는',p)
         })
-        totalEl.innerHTML=(`${p}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-        realtotalEl.innerHTML = (`${p+3000}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+        totalEl.innerHTML=(`${p}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + '원';
+        realtotalEl.innerHTML = (`${p+3000}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + '원';
     })
 })
 
