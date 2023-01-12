@@ -29,7 +29,7 @@ reAllElArr.forEach(e=>{
 })
 totalEl.innerHTML=p
 let  realtotalEl = document.getElementById('realtotal');
-        realtotalEl.innerHTML = `${p+3000}원`;
+        realtotalEl.innerHTML = (`${p+3000}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 
 // 플러스 버튼 함수
 eaplus.forEach(e=>{
