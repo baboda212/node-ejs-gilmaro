@@ -13,8 +13,9 @@ body{
 }
 /* footer.css */
 .footer {
-    width: 100%;
+    width: 375px;
     height: 500px;
+    margin: 0 auto;
 }
 
 .footer .footer-menu {
