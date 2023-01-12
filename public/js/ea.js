@@ -27,7 +27,7 @@ reAllElArr.forEach(e=>{
    p+=eval(e.value )
    console.log('p는',p)
 })
-totalEl.innerHTML=p
+totalEl.innerHTML=(`${p}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 let  realtotalEl = document.getElementById('realtotal');
         realtotalEl.innerHTML = (`${p+3000}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 
@@ -54,7 +54,7 @@ eaplus.forEach(e=>{
            p+=eval(e.value )
            console.log('p는',p)
         })
-        totalEl.innerHTML=p
+        totalEl.innerHTML=(`${p}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
         realtotalEl.innerHTML = (`${p+3000}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     })
 })
@@ -88,7 +88,7 @@ eaminus.forEach(e=>{
            p+=eval(e.value )
            console.log('p는',p)
         })
-        totalEl.innerHTML=p
+        totalEl.innerHTML=(`${p}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
         realtotalEl.innerHTML = (`${p+3000}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     })
 })
