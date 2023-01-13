@@ -214,11 +214,12 @@ app.post('/userinfo', async function(req, res){
 app.post('/login' , async function(req, res){
     let login_userId = req.body.login_userId;
     let login_userPwd = req.body.login_userPwd;
+    let urlEl = req.body.url
     let checkId = await User.findAll({where: {userIds:login_userId}});
     let reviewId =Boolean(checkId[0]);
     // console.log(reviewId);
     if(reviewId == false) {
-        res.send("<script>alert('존재하지 않는 아이디입니다.'); window.location.replace('/');</script>")
+        res.send(`<script>alert('존재하지 않는 아이디입니다.'); window.location.replace('${urlEl}');</script>`)
     } else {
         let checkPwd = checkId[0].userPwd;
         console.log(checkPwd);
@@ -228,8 +229,7 @@ app.post('/login' , async function(req, res){
                 // expires: new Date(Date.now() + 900000), // 얼마의시간동안 가지고있을것인가
                 // httpOnly: true // js접근 막음 오로지 웹서버데이터로만 움직일수있음
             });
-            
-            res.redirect('/') // 로그인성공시
+            res.send(`<script>alert('로그인 되었습니다.'); window.location.replace('${urlEl}');</script>`) // 로그인성공
 
         } else {
             res.send("<script>alert('비밀번호가 옳지 않습니다.'); window.location.replace('/');</script>")

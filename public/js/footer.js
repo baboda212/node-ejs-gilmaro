@@ -130,3 +130,8 @@ closeboxEl.addEventListener('click', function(){
 function getInnerCustomer() {
     alert('02-425-3200으로 문의해 주세요');
   }   
+
+
+// 
+document.getElementById('url').value=location.href
+console.log(location.href)
