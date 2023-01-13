@@ -26,7 +26,8 @@ $('.cashier .cashier-close').on('click', function(){
 
 /* bottom-nav 클릭시 */
 $('.bottom-nav').on('click', function(){
-    $(this).css('bottom', '0');
+
+    //$(this).css('bottom', '0'); 클릭하면 하단메뉴올라오게
     $(this).css('backgroundColor', '#fff');
     $('.side-btn').css('bottom', '180px');
     $('.cashier-btn').css('bottom', '70px');

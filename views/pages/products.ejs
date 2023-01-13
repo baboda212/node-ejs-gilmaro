@@ -40,12 +40,12 @@
                                 </div>
                                 <p><%=products[i].brand_en%></p>
                                 <p><%=products[i].type_1%> <%=products[i].name%></p>  
-                                <P>정상가 : <%=products[i].price%>원</P>                                
+                                <P>정상가 : <%=products[i].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")%>원</P>                                
                             
                     </div>    
                 <%}%>    
             </div>              
-            <button>더보기</button>
+            <button class="products_btn">더보기</button>
         </div>
 
         <div class="best">
@@ -59,11 +59,11 @@
                         </div>
                         <p><%=products[i].brand_en%></p>
                         <p><%=products[i].type_1%> <%=products[i].name%></p>  
-                        <P>정상가 : <%=products[i].price%>원</P>
+                        <P>정상가 : <%=products[i].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")%>원</P>
                     </div>    
                 <%}%>    
             </div>              
-            <button>더보기</button>
+            <button class="products_btn">더보기</button>
         </div>
         
         <div class="sale" data-item="<%=products.length%>">
@@ -77,11 +77,11 @@
                         </div>
                         <p><%=products[i].brand_en%></p>
                         <p><%=products[i].type_1%> <%=products[i].name%></p>  
-                        <P>정상가 : <%=products[i].price%>원</P>
+                        <P>정상가 : <%=products[i].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")%>원</P>
                     </div>    
                 <%}%>    
             </div>              
-            <button>더보기</button>
+            <button class="products_btn">더보기</button>
         </div>
         <%- include('components/footer.ejs') %> 
         <%- include('components/bottomNav.ejs') %>
@@ -89,7 +89,7 @@
 
     </div>    
     <script src="/js/check.js"></script>
-    <script src="js/sitemap.js"></script>
-    <script src="js/products.js"></script>
+    <script src="/js/sitemap.js"></script>
+    <script src="/js/products.js"></script>
 </body>
 </html>

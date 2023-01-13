@@ -1,4 +1,4 @@
-let btnEls = document.querySelectorAll('button');
+let btnEls = document.querySelectorAll('.products_btn');
 let items = document.querySelectorAll('.item_box');
 
 btnEls[0].addEventListener('click',()=>{
@@ -40,22 +40,4 @@ btnEls[2].addEventListener('click',()=>{
         btnEls[2].innerText="접기"
         numVar=1;
     }
-})
-
-let markEl = document.querySelectorAll('.bookMark');
-// let basketEl = document.getElementById('basket');
-let bookArr = [];
-markEl.forEach(e=>{
-    e.addEventListener('click',()=>{
-        localStorage.setItem(e.dataset.items,e.dataset.items)
-        if(bookArr.indexOf(e.dataset.items)<0) {
-            bookArr.push(localStorage.getItem(e.dataset.items))
-        }else {
-            return false;
-        }
-    })
-})
-
-basketEl.addEventListener('click',()=>{
-    console.log(bookArr);
 })

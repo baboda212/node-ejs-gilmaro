@@ -1,6 +1,24 @@
 /* footer.js (찜목록) */
 
+let markEl = document.querySelectorAll('.bookMark');
 let basketEl = document.getElementById('basket');
+let bookArr = [];
+
+for(i=0; i<localStorage.length;i++){
+    bookArr.push(localStorage.getItem(i))
+}
+let locaNum = localStorage.length
+markEl.forEach(e=>{
+    e.addEventListener('click',()=>{
+        localStorage.setItem(locaNum,e.dataset.items)
+        if(bookArr.indexOf(e.dataset.items)<0) {
+            bookArr.push(localStorage.getItem(locaNum));
+            locaNum++
+        }else {
+            return false
+        }
+    })
+})
 
 basketEl.addEventListener('click',()=>{
     console.log(bookArr)
@@ -31,7 +49,7 @@ function bookMarkReavile(arr) {
             bgEl.setAttribute('style','width: 100%; height: 100%;')
             bgEl.setAttribute('src',`${arr[i].imgUrl}`);
             img_boxEl.append(bgEl);
-            let bookMarkEl = document.createElement('bookMark');
+            let bookMarkEl = document.createElement('img');
             bookMarkEl.setAttribute('style',' position: absolute; right: 0; bottom: 0;')
             bookMarkEl.setAttribute('src','./images/bookMark.svg');
             img_boxEl.append(bookMarkEl);
@@ -55,18 +73,60 @@ function bookMarkReavile(arr) {
     
 }
 
-let loginBox = document.getElementsByClassName('login')[0];
-let userInfoEl = document.getElementById('user-info');
 
-userInfoEl.addEventListener('click', function(){
+let loginBox = document.getElementsByClassName('login')[0];
+let userInfoEl = document.querySelectorAll('.user-info');
+let inloginEl = document.getElementsByClassName('inlogin');
+let innerLoginEl = document.getElementsByClassName('innerlogin')[0];
+let personEl = document.getElementById('person');
+function cookie () {
     const cookie = document.cookie;
-    // console.log(Boolean(cookie));
+        // console.log(Boolean(cookie));
+        
+        if(Boolean(cookie) == false) {
+            userInfoEl[0].innerText = "로그인"
+            userInfoEl[0].style.color="#fff"
+
+          
+            
+        } else {
+            userInfoEl[0].innerText = "로그아웃"
+            userInfoEl[0].style.color="#fff"
+            personEl.setAttribute("src", "/images/개인정보.png")
+            
+        }
+}
+
+cookie();
+
+userInfoEl.forEach(e => {
+    e.addEventListener('click', function(){
+        const cookie = document.cookie;
+        // console.log(Boolean(cookie));
+        
+        if(Boolean(cookie) == false) {
+            loginBox.style.display = 'block'
+          
+            
+        } else {
+            if(confirm('로그아웃하시겠습니까?')==true) {
+                window.location.replace('/logout')
+            }else{
+                return false
+            }        
+        }
+    })
     
-    if(Boolean(cookie) == false) {
-        loginBox.style.display = 'block'
-    } else (
-        alert('로그아웃하시겠습니까?'),
-        window.location.replace('/logout')
-    )
 })
 
+let closeboxEl = document.getElementsByClassName('close-box')[0];
+
+closeboxEl.addEventListener('click', function(){
+    loginBox.style.display='none';
+})
+
+
+/* footer 고객센터 */
+function getInnerCustomer() {
+    alert('02-425-3200으로 문의해 주세요');
+  }   

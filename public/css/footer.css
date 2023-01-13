@@ -17,6 +17,12 @@ body{
     height: 500px;
     margin: 0 auto;
 }
+.btn-remove {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
 
 .footer .footer-menu {
     width: 100%;
@@ -24,6 +30,7 @@ body{
     background-color: #6c7178;
     margin-bottom: 15px;
     font-size: 13px;
+    cursor: pointer;
 }
 
 /* footer-menu */
@@ -101,9 +108,10 @@ body{
     margin-bottom: 6px;
 }
 
+/* 로그인박스 */
 .login {
     width: 375px;
-    height: 300px;
+    height: 340px;
     background-color: #fff;
     border: 1px solid black;
     border-radius: 10px;
@@ -120,6 +128,16 @@ body{
     flex-direction: column;
 }
 
+.login-box .close-box {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.login-box form {
+    margin-top: 30px;
+}
+
 .login .login-box input {
     height: 40px;
     border: 1px solid #2f2f2f;
@@ -127,6 +145,7 @@ body{
     margin-bottom: 10px;
     margin-top: 10px;
     width: 330px;
+    padding: 1em;
     
 }
 
@@ -136,8 +155,7 @@ body{
     background-color: #2f2f2f;
     border-radius: 5px;
     color: #fff;
-    margin-top: 20px;
-    margin-left: 90px;
+    margin: 20px 0 20px 90px;
 }
 .login a{
     text-align: center;
