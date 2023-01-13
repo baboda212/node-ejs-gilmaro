@@ -92,7 +92,7 @@ function cookie () {
         } else {
             userInfoEl[0].innerText = "로그아웃"
             userInfoEl[0].style.color="#fff"
-            personEl.setAttribute("src", "/images/개인정보.png")
+            personEl.setAttribute("src", "/images/개인정보.svg")
             
         }
 }

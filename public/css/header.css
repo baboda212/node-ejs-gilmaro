@@ -13,7 +13,7 @@ a {
     color: #000;
 }
 .container{
-    max-width: 375px;
+    max-width: 500px;
     margin: 0 auto;
     position: relative;
 }
@@ -24,13 +24,20 @@ ul li{
     width: 100%;
     background-color: #000;
     color: #fff;
-    height: 50px;    
+    height: 56px;    
+    /* outline: 1px solid red; */
+    padding: 0 16px;
 }
-
+.container .nav .logo img{
+    /* outline: 1px solid blue; */
+    margin-top: 10px;
+}
 .container .nav ul {
     display: flex;
     justify-content: space-between;
-    padding: 7px 20px;
+    /* padding: 7px 16px; */
+    /* outline: 1px solid red; */
+    padding-top: 2.5px;
 }
 .container .nav .icon-box{
     /* outline: 1px solid red; */
@@ -43,11 +50,10 @@ ul li{
 
 /* 검색버튼 */
 .icon-box #search1{
-    padding: 5px;
+    /* padding: 5px; */
     border: 1px solid #2f2f2f;
     border-radius: 5px;
     width: 5rem;
-    margin-right: 5px;
 }
 
 .icon-box #search2 {
@@ -56,9 +62,6 @@ ul li{
 .search_form{
     /* outline: 1px solid red; */
     display: flex;
-}
-.nav ul li .icon-box img {
-    margin-right: 10px;
 }
 
 /* site-map.css */
