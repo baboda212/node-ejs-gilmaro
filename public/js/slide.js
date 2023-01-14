@@ -23,7 +23,10 @@ $(function () {
       bgImgNum = 0;
     }
     $(".main-visual").css({
-      "background-image": `url(${bgImg[bgImgNum]})`
+      "background-image": `url(${bgImg[bgImgNum]})`,
+      "background-repeat":'no-repeat',
+      "background-position":'center',
+      "background-size":'cover'
     });
   }, 5000);
 });
