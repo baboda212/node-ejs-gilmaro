@@ -31,11 +31,11 @@
         <section class="brands">
             <h1>OUR BRANDS</h1>
             <div class="brands_site">
-                <a href="#"><img class="circle" src="images/a1.jpg" alt="레노마"></a>
-                <a href="#"><img class="circle" src="images/a2.jpg" alt="무민"></a>
-                <a href="#"><img class="circle" src="images/a3.jpg" alt="조르지오페리"></a>
-                <a href="#"><img class="circle" src="images/a4.jpg" alt="엠유스포츠"></a>
-                <a href="#"><img class="circle" src="images/a5.jpg" alt="엔솔로지"></a>
+                <a href="/brands"><img class="circle" src="images/a1.jpg" alt="레노마"></a>
+                <a href="/brands"><img class="circle" src="images/a2.jpg" alt="무민"></a>
+                <a href="/brands"><img class="circle" src="images/a3.jpg" alt="조르지오페리"></a>
+                <a href="/brands"><img class="circle" src="images/a4.jpg" alt="엠유스포츠"></a>
+                <a href="/brands"><img class="circle" src="images/a5.jpg" alt="엔솔로지"></a>
             </div>
         </section>
         <section class="products">
@@ -51,8 +51,8 @@
                         <h4><%= products[i].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") %>원</h4>   
                     </div>
                 <%}%>
-                <a class="more" href="products">더보기</a>
             </div>
+            <a class="more" href="products">더보기</a>
         </section>
         <%- include('components/footer.ejs') %> 
         <%- include('components/bottomNav.ejs') %>

@@ -34,3 +34,11 @@ $('.bottom-nav').on('click', function(){
     $('.cashier').css('bottom', '150px');
 })
 
+/* 돋보기버튼 클릭시 */
+$('.header .nav .icon-box .glass').on('click', function(){
+    $('.search_form ').toggleClass('show')
+})
+/* 돋보기 닫기버튼 클릭시 */
+$('.search-form .searchnav a').on('click', function(){
+    $('.search_form ').removeClass('show')
+})
