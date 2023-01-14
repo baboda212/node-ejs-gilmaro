@@ -110,7 +110,7 @@ body{
 
 /* 로그인박스 */
 .login {
-    width: 375px;
+    width: 100%;
     height: 340px;
     background-color: #fff;
     border: 1px solid black;
