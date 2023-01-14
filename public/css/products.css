@@ -94,6 +94,7 @@ a {
     background-color: #fff;
     border: 1px solid rgba(47,47,47,0.5);
     border-radius: 5px;
+    margin-bottom: 50px;
 }
 
 .best {
@@ -148,6 +149,7 @@ a {
     background-color: #fff;
     border: 1px solid rgba(47,47,47,0.5);
     border-radius: 5px;
+    margin-bottom: 50px;
 }
 
 .sale {
@@ -202,7 +204,7 @@ a {
     background-color: #fff;
     border: 1px solid rgba(47,47,47,0.5);
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 .container .bookMark {
     cursor: pointer;
