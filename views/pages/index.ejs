@@ -43,7 +43,9 @@
             <div class="products-list">
                 <%for(let i=products.length-1; i>products.length-5; i--) {%>
                     <div class="product">
-                        <img src="<%= products[i].imgUrl  %> " alt="양산">
+                        <a href="productsdetail/<%=products[i].id%>">
+                            <img src="<%=products[i].imgUrl%>" alt="제품이미지">
+                        </a>
                         <a href="#" class="icon">
                             <img data-items="<%=products[i].id%>" class="icon-heart bookMark" src="/images/ri_heart-line.svg" alt="좋아요">
                         </a>
