@@ -49,6 +49,8 @@ app.get('/',async (req, res) => {
     res.render('pages/index.ejs', {products});
 })
 
+
+
 //about 라우팅
 app.get('/about', function(req, res){
     res.render('pages/about.ejs');
