@@ -50,7 +50,7 @@ app.get('/index',async (req, res) => {
     // console.log('Cookies:', req.cookies) // 쿠키가 서버에떠다니는가?
     const cookie = req.cookies
     let re = Object.values(cookie); // 쿠키의 value 값 반환 여기선 true(로그인해서 id가 참이라)
-    console.log(re);
+    //console.log(re);
     
     res.render('pages/index.ejs', {products});
 })
@@ -62,7 +62,7 @@ app.get('/admin', async function(req, res){
     // console.log('Cookies:', req.cookies) // 쿠키가 서버에떠다니는가?
     const cookie = req.cookies
     let re = Object.values(cookie); // 쿠키의 value 값 반환 여기선 true(로그인해서 id가 참이라)
-    console.log(re);
+    //console.log(re);
     
     res.render('pages/admin.ejs', {products});
 })
@@ -91,7 +91,7 @@ app.get('/productsdetail/:id', async(req,res) => {
     let products = await Products.findAll({where: {id:id}});
     /* console.log(JSON.stringify(products,null,2))
     console.log(products[0]) */
-    console.log('Cookies:', req.cookies)
+    //console.log('Cookies:', req.cookies)
     res.render('pages/productsdetail.ejs', {products})
 })
 
@@ -130,13 +130,13 @@ app.post('/delete/:id', async function(req, res) {
     const userCart = await User.findAll({where: {userIds:cookie}})
  
         const cartArr = userCart[0].userCart.split(',')
-        console.log('cart',cartArr)
+        //console.log('cart',cartArr)
         
         let delCartArr=cartArr.splice(payCart-1, 1)
         //console.log(cartArr)
-        console.log('del=',delCartArr, 'cart=',cartArr)
+        //console.log('del=',delCartArr, 'cart=',cartArr)
         let string = cartArr.join()
-        console.log('str',string)
+        //console.log('str',string)
 
         await User.update({
             userCart: string
@@ -150,19 +150,21 @@ app.post('/delete/:id', async function(req, res) {
 // cart
 app.post('/cart/:id', async function(req, res){
     const cookie = req.cookies.user;
-    console.log(cookie)
+    console.log('사용자',cookie)
     const cartEl = req.params.id;
 
     const userCart = await User.findAll({where: {userIds:cookie}})
-    console.log(userCart[0].userCart);
+    console.log('카트',userCart[0].userCart);
     const cartArr = []
 
     cartArr.push(userCart[0].userCart)
+     if(userCart == ''){
+        cartArr;
+     }
     if(cartArr.indexOf(cartEl) < 0 ) {
        const uCart =  userCart[0].userCart + ',' + cartEl;
        await User.update({
         userCart: uCart
-
        },{where: {userIds:cookie}});
        res.redirect('/index')  
     } else {
@@ -171,7 +173,7 @@ app.post('/cart/:id', async function(req, res){
     
     
     // let re = Object.values(cookie); // 쿠키의 value 값 반환 여기선 true(로그인해서 id가 참이라)
-    console.log(cookie);
+    //console.log(cookie);
     
 })
 
@@ -214,7 +216,7 @@ app.get('/manager',  async function(req, res){
     // console.log(re, reviewId);
     if(re == 'dididididi') {
         res.render('pages/manager.ejs',{order})
-        console.log(reviewId_m);
+        //console.log(reviewId_m);
     } else {
         res.send(`<script>alert("관리자로그인이 필요한 페이지입니다.");window.location.replace('/products')</script>`)
     }
@@ -239,7 +241,7 @@ app.get('/mypage', async function(req, res) {
     const id = req.cookies;
     let re = Object.values(id);
     let user = await User.findAll({where: {userIds: re}});
-    console.log(user[0].id)
+    //console.log(user[0].id)
     let reviewId_m =Boolean(user[0]); // 찾는값 배열변환
     // console.log(re, reviewId);
     if(reviewId_m == false) {
