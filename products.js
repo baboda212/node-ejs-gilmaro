@@ -69,6 +69,11 @@ const Order = sequelize.define('Order', {
         type:DataTypes.STRING,
         allowNull: false,
         defaultValue:''
+    },
+    detail: {
+        type:DataTypes.STRING,
+        allowNull: false,
+        defaultValue:''
     }
 })
 

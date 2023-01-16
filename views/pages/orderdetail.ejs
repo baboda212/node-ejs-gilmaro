@@ -10,9 +10,9 @@
     <!-- font -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- css -->
-    <link rel="stylesheet" href="css/orderdetail.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">   
+    <link rel="stylesheet" href="/css/orderdetail.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">   
 </head>
 <body>
     <div class="container">
@@ -21,20 +21,30 @@
         <!-- 본문 -->
         <h1>관리자(주문제작상세내역)</h1>
         <table class="order">
-            <tr>
-                <td>이름:홍길동</td>
-                <td>연락처: 010-0000-0000</td>
-            </tr>
-            <tr>
-                <td colspan="2">이메일: abc@naver.com</td>
-                <!-- <td></td> -->
-            </tr>
-            <tr>
-                <td colspan="2">제목: 주문의뢰의 건</td>
-            </tr>
-            <tr>
-                <td colspan="2">세부내용</td>
-            </tr>
+            <% order.forEach(order => {%>
+                <tr>
+                    <td>이름:<%= order.name %></td>
+                    <td>연락처: <%= order.phone %></td>
+                </tr>
+                <tr>
+                    <td colspan="2">이메일: <%= order.email %></td>
+                    <!-- <td></td> -->
+                </tr>
+                <tr>
+                    <td colspan="2">제목: <%= order.title %></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div>
+                            <%= order.detail %>
+                        </div>
+                            
+                       
+                         
+                    </td>
+                </tr>
+            <%}) %>
+            
         </table>
         <%- include('components/footer.ejs') %> 
         <%- include('components/bottomNav.ejs') %>
@@ -42,6 +52,7 @@
     </div>
 
 
-    <script src="js/sitemap.js"></script>
+    <script src="/js/check.js"></script>
+    <script src="/js/sitemap.js"></script>
 </body>
 </html>

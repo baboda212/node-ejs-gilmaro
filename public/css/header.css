@@ -19,7 +19,7 @@ a {
     position: relative;
 }
 .header{
-    max-width: 500px;
+    width: 100%;
 }
 ul li{
     list-style-type: none;
@@ -183,7 +183,7 @@ body {
 .side-btn {
     position: fixed;
     left: calc(100% - 90px);
-    bottom: 100px;
+    bottom: 170px;
     width: 70px;
     height: 70px;
     background-color: #000;
@@ -198,7 +198,7 @@ body {
     color: #fff;
 }
 .bottom-box{
-    max-width: 500px;
+    width: 100%;
     margin: 0 auto;
 }
 .bottom-nav {

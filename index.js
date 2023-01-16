@@ -9,6 +9,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cookieParser()); // 쿠키사용
 
+
 //ejs 를  view엔진으로 설정하기
 app.set('view engine', 'ejs');
 //정적파일 경로 지정(외부css파일 불러오기)
@@ -52,6 +53,18 @@ app.get('/index',async (req, res) => {
     console.log(re);
     
     res.render('pages/index.ejs', {products});
+})
+
+app.get('/admin', async function(req, res){
+    let products = await Products.findAll();
+    // console.log(JSON.stringify(products,null,2));
+    
+    // console.log('Cookies:', req.cookies) // 쿠키가 서버에떠다니는가?
+    const cookie = req.cookies
+    let re = Object.values(cookie); // 쿠키의 value 값 반환 여기선 true(로그인해서 id가 참이라)
+    console.log(re);
+    
+    res.render('pages/admin.ejs', {products});
 })
 
 
@@ -98,7 +111,7 @@ app.get('/pay', async function(req, res){
         for (let i = 0; i < cartArr.length; i++) {
              products.push(arr[[i]])
         }
-        console.log(products);
+        // console.log(products);
        /*  if(checkId == cookie) {
             res.render('pages/orderdetail.ejs');    
         } else {
@@ -107,6 +120,30 @@ app.get('/pay', async function(req, res){
         res.render('pages/pay.ejs', {products} );
     }
     
+})
+
+// pay-제품삭제
+app.post('/delete/:id', async function(req, res) {
+    const payCart =  req.params.id
+    const cookie = req.cookies.user;
+    
+    const userCart = await User.findAll({where: {userIds:cookie}})
+ 
+        const cartArr = userCart[0].userCart.split(',')
+        console.log('cart',cartArr)
+        
+        let delCartArr=cartArr.splice(payCart-1, 1)
+        //console.log(cartArr)
+        console.log('del=',delCartArr, 'cart=',cartArr)
+        let string = cartArr.join()
+        console.log('str',string)
+
+        await User.update({
+            userCart: string
+    
+           },{where: {userIds:cookie}});
+
+    res.redirect('/pay')
 })
 
 
@@ -158,15 +195,16 @@ app.post('/order-product', async function(req,res){
     const email = req.body.email;
     const phone = req.body.phone;
     const title = req.body.title;
+    const detail = req.body.detailpost;
     
 
     /* 테이블db에 내용 보내주면서 만들기 */
-    const newOrder = await Order.create({name: name, email: email, phone: phone, title: title})
+    const newOrder = await Order.create({name: name, email: email, phone: phone, title: title, detail: detail})
     res.redirect('/manager')
 })
 
 
-// 관리자페이지
+// 관리자페이지-주문제작게시판
 app.get('/manager',  async function(req, res){
     let order = await Order.findAll();
     const cookie = req.cookies
@@ -174,16 +212,21 @@ app.get('/manager',  async function(req, res){
     let checkId_m = await User.findAll({where: {userIds:re}}); // 등록된 id가 db와맞는가??
     let reviewId_m =Boolean(checkId_m[0]); // 찾는값 배열변환
     // console.log(re, reviewId);
-    if(reviewId_m == false) {
-        res.send(`<script>alert("로그인이 필요한 페이지입니다.");window.location.replace('/products')</script>`)
-    } else {
+    if(re == 'dididididi') {
         res.render('pages/manager.ejs',{order})
         console.log(reviewId_m);
+    } else {
+        res.send(`<script>alert("관리자로그인이 필요한 페이지입니다.");window.location.replace('/products')</script>`)
     }
    
 })
 
 // orderdetail = 주문제작의뢰서 내용더보기 클릭시 이동
+app.get('/orderdetail/:id', async function(req, res){
+    let id = req.params.id;
+    let order = await Order.findAll({where: {id:id}});
+    res.render('pages/orderdetail.ejs', {order})
+})
 
 
 // membership 라우팅

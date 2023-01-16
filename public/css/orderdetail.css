@@ -33,3 +33,12 @@ a{
 .container .order tr:last-child{
     height: 200px;
 }
+
+/* textarea 수정 */
+
+.container .order div {
+    border-style: none;
+    width: 300px;
+    font-size: 14px;
+    white-space: pre-line;
+}

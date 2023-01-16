@@ -111,4 +111,24 @@
     .reAll {
         display: none;
     }
+
+    /* 색상변경 select */
+    #color {
+        border-style: none;
+    }
+
+    /* 제품삭제 버튼 */
+    .container .product-info .info .form-box {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container .product-info .info .form-box button {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 2px;
+        background-color: transparent;
+    }
 }
+
+

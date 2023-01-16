@@ -34,7 +34,7 @@
                     </div>
                     <div class="phone-box">
                         <label for="phone">연락처(필수)</label>
-                        <input type="tel" id="phone" name="phone" placeholder="연락처" required>
+                        <input type="tel" pattern="[0-1]{3}-[0-9]{3,4}-[0-9]{4}" id="phone" name="phone" placeholder="010-0000-0000"  required maxlength="13">
                     </div>
                     <div class="title-box">
                         <label for="title">제목</label>
@@ -42,8 +42,8 @@
                     </div>
                 
                   <label for="post">내용</label>
-                  <textarea name="post" id="post" cols="30" rows="10" placeholder="여기에 글을 작성해주세요" maxlength="500" spellcheck = "false" required>
-     ※제공된 양식에 맞춰 작성해주세요.
+                  <textarea id="detailpost" name="detailpost" cols="30" rows="10" placeholder="여기에 글을 작성해주세요" maxlength="500" spellcheck = "false" required>
+    ※제공된 양식에 맞춰 작성해주세요.
 
     상품이름:
     색상:

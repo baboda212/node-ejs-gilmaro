@@ -30,7 +30,7 @@
         <div class="new_arrival">
             <h1>NEW ARRIVAL</h1>
             <div class="item_box">
-                <% for(i=0; i<8; i++) {%>
+                <% for(i=products.length-1; i>products.length -9; i--) {%>
                    <div class="item">      
                         <div class="img_box">
                                 <a href="productsdetail/<%=products[i].id%>">

@@ -18,6 +18,10 @@
     margin: 0 auto;
   }
 
+.container .review {
+    margin-bottom: 100px;
+}
+
 .container .review-list-box tbody {
     font-size: 12px;
 }

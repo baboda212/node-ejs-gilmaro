@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, iuser-scalable=no">
+    <meta name="og:site_name" content="GILMARO모바일 쇼핑 앱" />
+    <meta name="og:title" content="GILMARO모바일 쇼핑 앱" />
+    <meta
+      name="og:description"
+      content="GILMARO모바일 쇼핑 앱입니다."
+    />
+    <meta name="og:type" content="website" />
+    <meta name="keywords" content="GILMARO, 우산, 무민, RENOMA" />
+    <meta name="author" content="김선민, 권동환, 이준무" />
+    <meta
+      name="description"
+      property="og:description"
+      content="GILMARO모바일 쇼핑 앱입니다."
+    />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png" sizes="16x16">
+    
+    <title>index</title>
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+     
+</head>
+<body>
+    <div class="container">
+        
+        <!-- index.html -->
+        <!-- header -->
+        <%- include('components/header.ejs') %> 
+        <h1>관리자 페이지</h1>
+        <section class="main-visual">
+        </section>
+        <section class="brands">
+            <h1>OUR BRANDS</h1>
+            <div class="brands_site">
+                <a href="/brands"><img class="circle" src="images/a1.jpg" alt="레노마"></a>
+                <a href="/brands"><img class="circle" src="images/a2.jpg" alt="무민"></a>
+                <a href="/brands"><img class="circle" src="images/a3.jpg" alt="조르지오페리"></a>
+                <a href="/brands"><img class="circle" src="images/a4.jpg" alt="엠유스포츠"></a>
+                <a href="/brands"><img class="circle" src="images/a5.jpg" alt="엔솔로지"></a>
+            </div>
+        </section>
+        <section class="products">
+            <h1>NEW ARRAINAL</h1>
+            <div class="products-list">
+                <%for(let i=products.length-1; i>products.length-5; i--) {%>
+                    <div class="product">
+                        <a href="productsdetail/<%=products[i].id%>">
+                            <img src="<%=products[i].imgUrl%>" alt="제품이미지">
+                        </a>
+                        <a href="#" class="icon">
+                            <img data-items="<%=products[i].id%>" class="icon-heart bookMark" src="/images/ri_heart-line.svg" alt="좋아요">
+                        </a>
+                        <p><%= products[i].brand_en %> <%= products[i].name %></p>
+                        <h4><%= products[i].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") %>원</h4>   
+                    </div>
+                <%}%>
+            </div>
+            <a class="more" href="products">더보기</a>
+        </section>
+        <%- include('components/footer.ejs') %> 
+        <%- include('components/bottomNav.ejs') %>
+        <%- include('components/sitemap.ejs') %> 
+    </div>
+    
+
+   <script src="js/slide.js"></script> 
+   <script src="js/sitemap.js"></script>
+</body>
+</html>

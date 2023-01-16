@@ -26,11 +26,20 @@
                             <div class="info">
                                 <img src= "<%=products[i].imgUrl %>" alt="상품사진">
                                 <div class="info-text">
-                                <h4><%= products[i].brand_en %></h4>
+                                <div class="form-box">
+                                    <h4><%= products[i].brand_en %></h4>
+                                    <form action="/delete/<%= products[i].id %>" method="post">
+                                        <button type="submit">삭제</button>
+                                    </form>
+                                </div>
                                 <p><%= products[i].brand_en %> <%= products[i].type_1 %> <%= products[i].name %></p>
                                 <p>정상가: <span class="re" id="price<%=[i]%>" data-value="<%= products[i].price %>"><%= products[i].price %></span>원</p>
                                 <p>수량: 1개</p>
-                                <p>색상: Black</p>
+                                <p>색상: 
+                                    <select name="color" id="color">
+                                        <option value="색상1"><%= products[i].color %></option>
+                                    </select>
+                                </p>
                             </div>
                             </div>
                            <div class="itemea">
@@ -46,7 +55,8 @@
                                     <p id="allprice<%=[i]%>"><%= products[i].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") %>원</p>
                                     <input class= 'reAll' value="<%=products[i].price %>" id="allprice2<%=[i]%>">
                                 </div>
-                            </div>
+                                
+                            </div>                        
                         <%}%>
                         
                         

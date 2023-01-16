@@ -24,15 +24,15 @@ $('.cashier .cashier-close').on('click', function(){
     $('.cashier').removeClass('show');
 })
 
-/* bottom-nav 클릭시 */
-$('.bottom-nav').on('click', function(){
+/* bottom-nav 클릭시  추후에 다시 활성화 */ 
+// $('.bottom-nav').on('click', function(){
 
-    //$(this).css('bottom', '0'); 클릭하면 하단메뉴올라오게
-    $(this).css('backgroundColor', '#fff');
-    $('.side-btn').css('bottom', '180px');
-    $('.cashier-btn').css('bottom', '70px');
-    $('.cashier').css('bottom', '150px');
-})
+//     $(this).css('bottom', '0');// 클릭하면 하단메뉴올라오게
+//     $(this).css('backgroundColor', '#fff');
+//     $('.side-btn').css('bottom', '180px');
+//     $('.cashier-btn').css('bottom', '70px');
+//     $('.cashier').css('bottom', '150px');
+// })
 
 /* 돋보기버튼 클릭시 */
 $('.header .nav .icon-box .glass').on('click', function(){

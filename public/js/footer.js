@@ -4,18 +4,26 @@ let markEl = document.querySelectorAll('.bookMark');
 let basketEl = document.getElementById('basket');
 let bookArr = [];
 
+
+
+
 for(i=0; i<localStorage.length;i++){
     bookArr.push(localStorage.getItem(i))
+    console.log(bookArr)
 }
 let locaNum = localStorage.length
 markEl.forEach(e=>{
     e.addEventListener('click',()=>{
-        localStorage.setItem(locaNum,e.dataset.items)
         if(bookArr.indexOf(e.dataset.items)<0) {
+             localStorage.setItem(locaNum,e.dataset.items)
             bookArr.push(localStorage.getItem(locaNum));
             locaNum++
         }else {
-            return false
+          localStorage.removeItem(bookArr.indexOf(e.dataset.items));
+            bookArr.splice((bookArr.indexOf(e.dataset.items)),1);
+            window.location.reload()
+
+
         }
     })
 })
@@ -24,15 +32,18 @@ basketEl.addEventListener('click',()=>{
     console.log(bookArr)
     fetch('/data', {method: "post"}).then((res)=>{return res.json()}).then((data)=>{
        let arr = [];
+    //    console.log(data)
        for(i=0;i<bookArr.length;i++){
-        arr.push(data[i])
+        console.log(bookArr[i])
+        arr.push(data[bookArr[i]-1])
+        // console.log(arr)
        }
        return bookMarkReavile(arr);
     })
 })
 
 let bookMarkListEl = document.getElementsByClassName('bookMarkList')[0];
-console.log(bookMarkListEl)
+// console.log(bookMarkListEl)
 function bookMarkReavile(arr) {
     let tf = bookMarkListEl.style.display
     console.log(tf)
@@ -43,6 +54,7 @@ function bookMarkReavile(arr) {
             itemEl.setAttribute('style',' margin-bottom: 30px; display: flex; flex-direction: column;')
             let img_boxEl = document.createElement('div');
             img_boxEl.classList.add('img_box');
+            img_boxEl.classList.add('icon');
             img_boxEl.setAttribute('style',"width: 150px; height: 150px; position: relative; margin-bottom: 25px;")
             let bgEl = document.createElement('img');
             bgEl.classList.add('bg')
@@ -50,8 +62,9 @@ function bookMarkReavile(arr) {
             bgEl.setAttribute('src',`${arr[i].imgUrl}`);
             img_boxEl.append(bgEl);
             let bookMarkEl = document.createElement('img');
+            bookMarkEl.classList.add('bookMark')
             bookMarkEl.setAttribute('style',' position: absolute; right: 0; bottom: 0;')
-            bookMarkEl.setAttribute('src','./images/bookMark.svg');
+            // bookMarkEl.setAttribute('src','./images/bookMark.svg');
             img_boxEl.append(bookMarkEl);
             itemEl.append(img_boxEl);
             let pEl1 = document.createElement('p');
@@ -72,6 +85,19 @@ function bookMarkReavile(arr) {
     console.log(arr);
     
 }
+
+markEl.forEach(e=>{
+    // console.log(e.dataset.items, bookArr)
+        if(bookArr.indexOf(e.dataset.items)==-1) {
+            e.setAttribute('src', '/images/ri_heart-line.svg')
+        }else {
+            e.setAttribute('src','/images/ri_heart-fill.svg')
+        }
+})
+
+
+
+
 
 
 let loginBox = document.getElementsByClassName('login')[0];
@@ -134,4 +160,4 @@ function getInnerCustomer() {
 
 // 
 document.getElementById('url').value=location.href
-console.log(location.href)
+// console.log(location.href)
