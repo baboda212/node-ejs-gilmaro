@@ -54,7 +54,8 @@
                 <% for(i=0; i<8; i++) {%>
                    <div class="item">      
                         <div class="img_box">
-                            <img class="bg" src="<%=products[i].imgUrl%>" alt="">
+                            <a href="productsdetail/<%=products[i].id%>">
+                            <img class="bg" src="<%=products[i].imgUrl%>" alt=""></a>
                             <img data-items="<%=products[i].name%>" class='bookMark' src="images/bookMark.svg" alt="북마크">
                         </div>
                         <p><%=products[i].brand_en%></p>
@@ -72,7 +73,8 @@
                 <% for(i=0; i<products.length; i++) {%>
                    <div class="item">      
                         <div class="img_box">
-                            <img class="bg" src="<%=products[i].imgUrl%>" alt="">
+                            <a href="productsdetail/<%=products[i].id%>">
+                            <img class="bg" src="<%=products[i].imgUrl%>" alt=""></a>
                             <img data-items="<%=products[i].name%>" class='bookMark' src="images/bookMark.svg" alt="북마크">
                         </div>
                         <p><%=products[i].brand_en%></p>
