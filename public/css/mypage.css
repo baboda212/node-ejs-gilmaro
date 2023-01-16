@@ -1,0 +1,42 @@
+@media (max-width:500px) {
+    .container {
+        max-width: 100%;
+    }
+    
+    .container h2 {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+    
+    .container .table {
+        width: 100%;
+        margin-bottom: 50px;
+        
+    }
+    
+    .container .table .infoName {
+        margin-bottom: 20px;
+        display: flex;
+    }
+    
+    .container .table label {
+        margin-right: 15px;
+    }
+    
+    .container .table input {
+        margin-bottom: 20px;
+    }
+    
+    .container #join {
+        width: 150px;
+        height: 50px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+    }
+    
+}
+

@@ -234,6 +234,53 @@ app.get('/membership', function(req, res) {
     res.render('pages/membership.ejs')
 })
 
+// 내정보 홈페이지
+app.get('/mypage', async function(req, res) {
+    const id = req.cookies;
+    let re = Object.values(id);
+    let user = await User.findAll({where: {userIds: re}});
+    console.log(user[0].id)
+    let reviewId_m =Boolean(user[0]); // 찾는값 배열변환
+    // console.log(re, reviewId);
+    if(reviewId_m == false) {
+        res.send(`<script>alert("로그인이 필요한 페이지입니다.");window.location.replace('/products')</script>`)
+    } else {
+        res.render('pages/mypage.ejs',{user})
+        console.log(reviewId_m);
+    }
+})
+
+// 내정보 수정
+app.post('/userupdate', async function(req, res) {
+    let userPhone = req.body.tell;
+    let userEmail = req.body.email;
+    // console.log(userPhone, userEmail)
+    const id = req.cookies;
+    let re = Object.values(id);
+    let user = await User.findAll({where: {userIds: re}});
+    // console.log("mypages= ",re);
+    await User.update({
+            userPhone: userPhone,
+            userEmail: userEmail  
+    }, {
+        where: {userIds:re}
+    })
+    res.redirect('/mypage')
+})
+
+// 회원탈퇴
+app.post('/userdelete', async function(req, res){
+    const id = req.cookies;
+    let re = Object.values(id);
+    let user = await User.findAll({where: {userIds: re}});
+    await User.destroy({
+        where: {
+            id: user[0].id
+        }    
+    });
+    res.redirect('/index')
+})
+
 // 회원가입
 app.post('/create', async function(req, res){
     let name = req.body.info;

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>menbership</title>
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="css/mypage.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <div class="container">
+        <!-- header -->
+        <%- include('components/header.ejs') %> 
+        <h2>개인정보</h2>
+        <form action="/userupdate" method="post" class="table">
+            <div class="infoName">
+                <label for="name" class="label">이름: </label><br>
+                <p><%= user[0].userName %>(<%= user[0].userIds %>)님</p>
+            </div>
+            <div class="infoTell">
+                <label for="name">연락처: </label>
+                <input type="tel" pattern="[0-1]{3}-[0-9]{3,4}-[0-9]{4}" id="tell" name="tell" value="<%= user[0].userPhone %>"  required maxlength="13">
+                
+            </div>
+            <div class="infoEmail">
+                <label for="name">이메일주소</label>
+                <input type="email" id="email" name="email" value="<%= user[0].userEmail %>">
+            </div>
+            
+            <button id="join" type="submit" class="membership">수정</button>
+        </form>
+        <form action="/userdelete" method="post">
+            <button id="join" type="submit" class="membership">탈퇴</button>
+        </form>
+        
+
+
+
+
+        <%- include('components/footer.ejs') %> 
+        <%- include('components/bottomNav.ejs') %>
+        <%- include('components/sitemap.ejs') %>
+    </div>
+    <script src="/js/membership.js"></script>
+</body>
+</html>
