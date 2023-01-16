@@ -19,7 +19,7 @@
         <!-- header -->
         <%- include('components/header.ejs') %> 
         <h2>개인정보</h2>
-        <form action="/userupdate" method="post" class="table">
+        <form action="/userupdate" method="post" class="table" onsubmit="let result1 = confirm('수정하시겠습니까?');if(!result1) return false;">
             <div class="infoName">
                 <label for="name" class="label">이름: </label><br>
                 <p><%= user[0].userName %>(<%= user[0].userIds %>)님</p>
@@ -30,14 +30,14 @@
                 
             </div>
             <div class="infoEmail">
-                <label for="name">이메일주소</label>
+                <label for="name">이메일주소:</label>
                 <input type="email" id="email" name="email" value="<%= user[0].userEmail %>">
             </div>
             
             <button id="join" type="submit" class="membership">수정</button>
         </form>
-        <form action="/userdelete" method="post">
-            <button id="join" type="submit" class="membership">탈퇴</button>
+        <form action="/userdelete" method="post" class="delbtn" onsubmit="let result = confirm('탈퇴하시겠습니까?');if(!result) return false;">
+            <button id="del" type="submit" class="membership"  >탈퇴</button>
         </form>
         
 
