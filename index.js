@@ -35,9 +35,14 @@ app.post('/search', async(req, res)=>{
         res.render('pages/products.ejs', {products})
     }
 })
+//splash
+app.get('/',async (req, res) => {
+    res.render('pages/splashScreen.ejs')
+})
+
 
 //home 라우팅
-app.get('/',async (req, res) => {
+app.get('/index',async (req, res) => {
     let products = await Products.findAll();
     // console.log(JSON.stringify(products,null,2));
     
@@ -81,7 +86,7 @@ app.get('/productsdetail/:id', async(req,res) => {
 app.get('/pay', async function(req, res){
     const cookie = req.cookies.user;
     if(cookie==undefined) {
-        res.send('<script>alert("로그인이 필요한 페이지입니다."); window.location.replace("/");</script>')
+        res.send('<script>alert("로그인이 필요한 페이지입니다."); window.location.replace("/index");</script>')
     }else {
         const userCart = await User.findAll({where: {userIds:cookie}})
  
@@ -122,9 +127,9 @@ app.post('/cart/:id', async function(req, res){
         userCart: uCart
 
        },{where: {userIds:cookie}});
-       res.redirect('/')  
+       res.redirect('/index')  
     } else {
-        res.redirect('/');
+        res.redirect('/index');
     }
     
     
@@ -202,7 +207,7 @@ app.post('/create', async function(req, res){
         userPwd: pwd
     })
 
-    res.redirect('/')
+    res.redirect('/index')
 })
 
 // 회원가입마지막확인
@@ -234,7 +239,7 @@ app.post('/login' , async function(req, res){
             res.send(`<script>alert('로그인 되었습니다.'); window.location.replace('${urlEl}');</script>`) // 로그인성공
 
         } else {
-            res.send("<script>alert('비밀번호가 옳지 않습니다.'); window.location.replace('/');</script>")
+            res.send("<script>alert('비밀번호가 옳지 않습니다.'); window.location.replace('/index');</script>")
         }
         
     }
@@ -244,7 +249,7 @@ app.post('/login' , async function(req, res){
 // 로그아웃
 app.get('/logout', function(req,res) {
     res.clearCookie("user")
-    res.redirect("/")
+    res.redirect("/index")
 })
 
 
