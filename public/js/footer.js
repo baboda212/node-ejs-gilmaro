@@ -4,11 +4,12 @@ let markEl = document.querySelectorAll('.bookMark');
 let basketEl = document.getElementById('basket');
 let bookArr = [];
 
+//console.log(localStorage.key(0));
 
 
 
 for(i=0; i<localStorage.length;i++){
-    bookArr.push(localStorage.getItem(i))
+    bookArr.push(localStorage.getItem(localStorage.key(i)))
     console.log(bookArr)
 }
 let locaNum = localStorage.length
@@ -29,14 +30,14 @@ markEl.forEach(e=>{
 })
 
 basketEl.addEventListener('click',()=>{
-    console.log(bookArr)
+    //console.log(bookArr)
     fetch('/data', {method: "post"}).then((res)=>{return res.json()}).then((data)=>{
        let arr = [];
     //    console.log(data)
        for(i=0;i<bookArr.length;i++){
-        console.log(bookArr[i])
+        //console.log(bookArr[i])
         arr.push(data[bookArr[i]-1])
-        // console.log(arr)
+        //console.log(arr)
        }
        return bookMarkReavile(arr);
     })
@@ -46,7 +47,7 @@ let bookMarkListEl = document.getElementsByClassName('bookMarkList')[0];
 // console.log(bookMarkListEl)
 function bookMarkReavile(arr) {
     let tf = bookMarkListEl.style.display
-    console.log(tf)
+    //console.log(tf)
     if(tf=='none'){
         for(i=0; i<arr.length; i++) {
             let itemEl = document.createElement('div');
@@ -82,7 +83,7 @@ function bookMarkReavile(arr) {
     }else if(tf=='flex'){
         bookMarkListEl.style.display='none'
     }
-    console.log(arr);
+    //console.log(arr);
     
 }
 

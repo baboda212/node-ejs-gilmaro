@@ -19,13 +19,13 @@ let eaminus = document.querySelectorAll('.eaminus');
 
 let reAllEl = document.getElementsByClassName('reAll');
 let totalEl = document.getElementById('total');
-console.log(Object.values(reAllEl));
+//console.log(Object.values(reAllEl));
 
 let reAllElArr = [...reAllEl];
 let p = 0;
 reAllElArr.forEach(e=>{ 
    p+=eval(e.value )
-   console.log('p는',p)
+   //console.log('p는',p)
 })
 totalEl.innerHTML=(`${p}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + '원';
 let  realtotalEl = document.getElementById('realtotal');
@@ -35,14 +35,14 @@ let  realtotalEl = document.getElementById('realtotal');
 eaplus.forEach(e=>{
     e.addEventListener('click',(e)=>{
         let eaEl= document.getElementById(`ea${e.target.dataset.item}`);
-        console.log(eaEl.innerHTML)
+        //console.log(eaEl.innerHTML)
         let nowEa = eval(eaEl.innerText)+1
         eaEl.innerHTML = nowEa
 
         let allprice = document.getElementById(`price${e.target.dataset.item}`);
         let allprice1 = document.getElementById(`allprice${e.target.dataset.item}`);
         let allprice2 = document.getElementById(`allprice2${e.target.dataset.item}`);
-        console.log(allprice.innerHTML)
+        //console.log(allprice.innerHTML)
         let newPrice= eval(allprice.innerHTML)*nowEa
         // newPrice = newPrice.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     
@@ -52,7 +52,7 @@ eaplus.forEach(e=>{
         let p = 0;
         reAllElArr.forEach(e=>{ 
            p+=eval(e.value )
-           console.log('p는',p)
+           //console.log('p는',p)
         })
         totalEl.innerHTML=(`${p}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + '원';
         realtotalEl.innerHTML = (`${p+3000}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") +'원';
@@ -63,15 +63,15 @@ eaminus.forEach(e=>{
     e.addEventListener('click',(e)=>{
         
         let eaEl= document.getElementById(`ea${e.target.dataset.item}`);
-        console.log(eaEl)
+        //console.log(eaEl)
         if(eaEl.innerHTML > 1) {
             let nowEa = eval(eaEl.innerHTML)-1
             eaEl.innerText = nowEa
-            console.log(eaEl.innerHTML, nowEa)
+            //console.log(eaEl.innerHTML, nowEa)
             let allprice = document.getElementById(`price${e.target.dataset.item}`);
             let allprice1 = document.getElementById(`allprice${e.target.dataset.item}`);
             let allprice2 = document.getElementById(`allprice2${e.target.dataset.item}`);
-            console.log(allprice.innerHTML)
+            //console.log(allprice.innerHTML)
             let newPrice= eval(allprice.innerHTML)*nowEa
             // newPrice = newPrice.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
         
@@ -86,7 +86,7 @@ eaminus.forEach(e=>{
         let p = 0;
         reAllElArr.forEach(e=>{ 
            p+=eval(e.value )
-           console.log('p는',p)
+           //console.log('p는',p)
         })
         totalEl.innerHTML=(`${p}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + '원';
         realtotalEl.innerHTML = (`${p+3000}`).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") + '원';

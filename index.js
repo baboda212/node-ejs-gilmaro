@@ -141,13 +141,13 @@ app.post('/delete/:id', async function(req, res) {
     const userCart = await User.findAll({where: {userIds:cookie}})
  
         const cartArr = userCart[0].userCart.split(',')
-        console.log('cart',cartArr,payCart)
+        //console.log('cart',cartArr,payCart)
         
         let delCartArr=cartArr.splice(cartArr.indexOf(payCart), 1)
-        console.log(cartArr)
-        console.log('del=',delCartArr, 'cart=',cartArr)
+        //console.log(cartArr)
+        //console.log('del=',delCartArr, 'cart=',cartArr)
         let string = cartArr.join()
-        console.log('str',string)
+        //console.log('str',string)
 
         await User.update({
             userCart: string
@@ -161,11 +161,11 @@ app.post('/delete/:id', async function(req, res) {
 // cart
 app.post('/cart/:id', async function(req, res){
     const cookie = req.cookies.user;
-    console.log('사용자',cookie)
+    //console.log('사용자',cookie)
     const cartEl = req.params.id;
 
     const userCart = await User.findAll({where: {userIds:cookie}})
-    console.log('카트',userCart[0].userCart);
+    //console.log('카트',userCart[0].userCart);
     const cartArr = []
 
     cartArr.push(userCart[0].userCart)
@@ -259,7 +259,7 @@ app.get('/mypage', async function(req, res) {
         res.send(`<script>alert("로그인이 필요한 페이지입니다.");window.location.replace('/products')</script>`)
     } else {
         res.render('pages/mypage.ejs',{user})
-        console.log(reviewId_m);
+        //console.log(reviewId_m);
     }
 })
 
@@ -332,9 +332,9 @@ app.post('/login' , async function(req, res){
         res.send(`<script>alert('존재하지 않는 아이디입니다.'); window.location.replace('${urlEl}');</script>`)
     } else {
         let checkPwd = checkId[0].userPwd;
-        console.log(checkPwd);
+        //console.log(checkPwd);
         if(checkPwd == login_userPwd) {
-            console.log('로그인성공')
+            //console.log('로그인성공')
             res.cookie("user", login_userId, { // res에 쿠키속성부여 .cookie('쿠키이름', 가져갈값, {속성})
                 // expires: new Date(Date.now() + 900000), // 얼마의시간동안 가지고있을것인가
                 // httpOnly: true // js접근 막음 오로지 웹서버데이터로만 움직일수있음
@@ -355,9 +355,6 @@ app.get('/logout', function(req,res) {
     res.redirect("/index")
 })
 
-
-
-// 장바구니담기
 
 //검색
 app.post('/search1', async(req, res)=>{
