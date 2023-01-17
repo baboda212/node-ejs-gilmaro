@@ -18,11 +18,11 @@
     <div class="container">
         <!-- header -->
         <%- include('components/header.ejs') %> 
-        <h1>전체상품(<span id="count"><%=products.length - 1%></span>)</h1>
+        <h1>전체상품(<span id="count"><%=products.length%></span>)</h1>
 
         <div class="product-info">
                 <div class="info-box">
-                        <% for(let i=1; i<products.length; i++) { %>
+                        <% for(let i=0; i < products.length; i++) { %>
                             <div class="info">
                                 <img src= "<%=products[i].imgUrl %>" alt="상품사진">
                                 <div class="info-text">

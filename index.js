@@ -107,17 +107,27 @@ app.get('/pay', async function(req, res){
         // console.log(cartArr);
         const products = [];
         let arr = await Products.findAll({raw : true});
-        
-        for (let i = 0; i < cartArr.length; i++) {
-             products.push(arr[[i]])
+        //console.log(Boolean(cartArr[1]), cartArr.length)
+        if(Boolean(cartArr[1]) == false){
+            res.render('pages/pay.ejs', {products} );
+        } else{
+            for (let i = 1; i < cartArr.length; i++) {
+                //console.log(cartArr[i], arr.length)
+                products.push(arr[cartArr[i]-1])
+
+           }
+            res.render('pages/pay.ejs', {products} );
+            //console.log(products.length)
         }
-        // console.log(products);
+
+       
+        //console.log(products);
        /*  if(checkId == cookie) {
             res.render('pages/orderdetail.ejs');    
         } else {
             res.send(`<script>alert("로그인이 필요한 페이지입니다.");window.location.replace('/products')</script>`)
         } */
-        res.render('pages/pay.ejs', {products} );
+
     }
     
 })
@@ -130,13 +140,13 @@ app.post('/delete/:id', async function(req, res) {
     const userCart = await User.findAll({where: {userIds:cookie}})
  
         const cartArr = userCart[0].userCart.split(',')
-        //console.log('cart',cartArr)
+        console.log('cart',cartArr,payCart)
         
-        let delCartArr=cartArr.splice(payCart-1, 1)
-        //console.log(cartArr)
-        //console.log('del=',delCartArr, 'cart=',cartArr)
+        let delCartArr=cartArr.splice(cartArr.indexOf(payCart), 1)
+        console.log(cartArr)
+        console.log('del=',delCartArr, 'cart=',cartArr)
         let string = cartArr.join()
-        //console.log('str',string)
+        console.log('str',string)
 
         await User.update({
             userCart: string

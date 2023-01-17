@@ -1,3 +1,4 @@
 --ALTER TABLE Orders ADD detail TEXT;
 --ALTER TABLE Orders ALTER COLUMN detail VARCHAR(255);
 --DELETE FROM Users WHERE id=7;
+--UPDATE Users SET userCart='' WHERE userCart=',68';
