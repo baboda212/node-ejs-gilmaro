@@ -12,7 +12,8 @@ $('.site-map .site-map-header .title a').on('click', function(){
 
 /* site-map depth1 클릭시 */
 $('.site-map .site-map-nav .depth1-title').on('click', function(){
-    $(this).next().toggleClass('show')
+    $('.site-map .site-map-nav .depth1-title').next().removeClass('show')
+    $(this).next().addClass('show')
 })
 
 /* 바로구매하기 버튼 클릭시 */
