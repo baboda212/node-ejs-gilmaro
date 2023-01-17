@@ -58,9 +58,9 @@
                         <a href="productsdetail/<%=products[i].id%>">
                             <img src="<%=products[i].imgUrl%>" alt="제품이미지">
                         </a>
-                        <!-- <a href="#" class="icon"> -->
-                            <img data-items="<%=products[i].id%>" class="icon-heart bookMark" src="/images/ri_heart-line.svg" alt="좋아요">
-                        <!-- s -->
+                        <a href="#" class="icon">
+                            <img id="icon" data-items="<%=products[i].id%>" class="icon-heart bookMark" src="/images/ri_heart-line.svg" alt="좋아요">
+                         </a>
                         <p><%= products[i].brand_en %> <%= products[i].name %></p>
                         <h4><%= products[i].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",") %>원</h4>   
                     </div>

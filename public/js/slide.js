@@ -1,5 +1,4 @@
 
-
 /* 슬라이드쇼 */
 $(function () {
   let bgImg = [
@@ -26,12 +25,13 @@ $(function () {
 
 /* 좋아요하트 */
 $(function(){
-  var $likeBtn =$('.icon');
+  var likeBtn =$('.icon');
 
-      $likeBtn.click(function(){
-      $likeBtn.toggleClass('active');
+      likeBtn.click(function(e){
+        e.preventDefault()
+      likeBtn.toggleClass('active');
 
-      if($likeBtn.hasClass('active')){          
+      if(likeBtn.hasClass('active')){          
          $(this).find('img').attr({
             'src': '/images/ri_heart-fill.svg',
              alt:'좋아요'
