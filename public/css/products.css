@@ -33,7 +33,7 @@ a {
 .lnb .depth1 {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .lnb .depth1 input {
     font-size: 12px;
