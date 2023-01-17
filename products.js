@@ -107,7 +107,6 @@ const User = sequelize.define('User', {
     userCart: {
         type:DataTypes.STRING,
         allowNull: true,
-        defaultValue:'',
     }
 
 })
