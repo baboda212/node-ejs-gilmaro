@@ -10,18 +10,22 @@ let bookArr = [];
 
 for(i=0; i<localStorage.length;i++){
     bookArr.push(localStorage.getItem(localStorage.key(i)))
-    console.log(bookArr)
+    // console.log("bookArr=", bookArr)
 }
 let locaNum = localStorage.length
 markEl.forEach(e=>{
     e.addEventListener('click',()=>{
+        // console.log(e.dataset.items, bookArr.indexOf(e.dataset.items))
+
         if(bookArr.indexOf(e.dataset.items)<0) {
              localStorage.setItem(locaNum,e.dataset.items)
             bookArr.push(localStorage.getItem(locaNum));
             locaNum++
         }else {
-          localStorage.removeItem(bookArr.indexOf(e.dataset.items));
+            // console.log("local= ", localStorage.key(0))
+          localStorage.removeItem(localStorage.key(bookArr.indexOf(e.dataset.items)));
             bookArr.splice((bookArr.indexOf(e.dataset.items)),1);
+            // console.log("실행되나요?")
             window.location.reload()
 
 
@@ -65,7 +69,6 @@ function bookMarkReavile(arr) {
             let bookMarkEl = document.createElement('img');
             bookMarkEl.classList.add('bookMark')
             bookMarkEl.setAttribute('style',' position: absolute; right: 0; bottom: 0;')
-            // bookMarkEl.setAttribute('src','./images/bookMark.svg');
             img_boxEl.append(bookMarkEl);
             itemEl.append(img_boxEl);
             let pEl1 = document.createElement('p');
@@ -162,3 +165,25 @@ function getInnerCustomer() {
 // 
 document.getElementById('url').value=location.href
 // console.log(location.href)
+
+
+
+// sessionStorage.clear()
+console.log(sessionStorage)
+const sessionArr = [];
+const sessionEl = document.getElementsByClassName('session');
+const sessionEl2 = [...sessionEl]
+console.log("sessionEl=", sessionEl2)
+
+function sessionfunction (){
+    for(let i = 0; i<sessionStorage.length; i++) {
+        sessionArr.push(sessionStorage.getItem(sessionStorage.key(i)))
+    }
+    console.log("세션=", sessionArr)
+    sessionEl2.forEach(e => {
+        e.value=sessionArr;
+    })
+   
+}
+
+sessionfunction();

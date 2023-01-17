@@ -160,33 +160,43 @@ app.post('/delete/:id', async function(req, res) {
 
 // cart
 app.post('/cart/:id', async function(req, res){
-    const cookie = req.cookies.user;
+    const cookie = req.cookies;
     //console.log('사용자',cookie)
     const cartEl = req.params.id;
-
-    const userCart = await User.findAll({where: {userIds:cookie}})
-    //console.log('카트',userCart[0].userCart);
-    const cartArr = []
-
-    cartArr.push(userCart[0].userCart)
-     if(userCart == ''){
-        cartArr;
-     }
-    if(cartArr.indexOf(cartEl) < 0 ) {
-       const uCart =  userCart[0].userCart + ',' + cartEl;
-       await User.update({
-        userCart: uCart
-       },{where: {userIds:cookie}});
-       res.redirect('/index')  
+    let session = req.body.session;
+    // console.log("session= ", session)
+    let re = Object.values(cookie)
+    
+    
+    if(Boolean(session) == false) {
+        session = cartEl;
     } else {
-        res.redirect('/index');
+        session = session + ',' + cartEl;
     }
+    // console.log(session);
     
-    
-    // let re = Object.values(cookie); // 쿠키의 value 값 반환 여기선 true(로그인해서 id가 참이라)
-    //console.log(cookie);
-    
-})
+    if(re == false ) {
+        res.send(`<script>sessionStorage.setItem('0', '${session}'); window.location.href('/products') </script>`)
+    } else {
+        const userCart = await User.findAll({where: {userIds:cookie}})
+ 
+        const cartArr = userCart[0].userCart.split(',')
+        // console.log(cartArr);
+        const products = [];
+        let arr = await Products.findAll({raw : true});
+        //console.log(Boolean(cartArr[1]), cartArr.length)
+        if(Boolean(cartArr[1]) == false){
+            res.render('pages/pay.ejs', {products} );
+        } else{
+            for (let i = 1; i < cartArr.length; i++) {
+                //console.log(cartArr[i], arr.length)
+                products.push(arr[cartArr[i]-1])
+           }
+            res.render('pages/pay.ejs', {products} );
+            //console.log(products.length)
+        }
+    }
+    })
 
 app.post('/data', async(req,res)=>{
     let data= await Products.findAll()
@@ -324,9 +334,11 @@ app.post('/userinfo', async function(req, res){
 app.post('/login' , async function(req, res){
     let login_userId = req.body.login_userId;
     let login_userPwd = req.body.login_userPwd;
+    let session = req.body.session;
     let urlEl = req.body.url
     let checkId = await User.findAll({where: {userIds:login_userId}});
     let reviewId =Boolean(checkId[0]);
+    
     // console.log(reviewId);
     if(reviewId == false) {
         res.send(`<script>alert('존재하지 않는 아이디입니다.'); window.location.replace('${urlEl}');</script>`)
@@ -339,9 +351,33 @@ app.post('/login' , async function(req, res){
                 // expires: new Date(Date.now() + 900000), // 얼마의시간동안 가지고있을것인가
                 // httpOnly: true // js접근 막음 오로지 웹서버데이터로만 움직일수있음
             });
-            res.send(`<script>alert('로그인 되었습니다.'); window.location.replace('${urlEl}');</script>`) // 로그인성공
-
-        } else {
+                const userCart = await User.findAll({where: {userIds:login_userId}})
+                // //console.log('카트',userCart[0].userCart);
+                let cartArr = []
+                let sessionArr = [];
+                sessionArr = session.split(',')
+                cartArr = userCart[0].userCart.split(',')
+                // console.log("cart= ",cartArr,'session= ', sessionArr)
+                 if(userCart == ''){
+                    await User.update({
+                        userCart: session
+                    }, {where: {userIds:login_userId}})
+                 } else {
+                    for(let i = 0; i < sessionArr.length; i++) {
+                        if(cartArr.indexOf(sessionArr[i]) < 0 ) {
+                            cartArr.push(sessionArr[i])
+                        } else {
+                            return false ; 
+                        }
+                    }
+                    // console.log("cartArr 보여줘 = ", cartArr)
+                    let string = cartArr.join();
+                    await User.update({
+                        userCart: string
+                    }, {where: {userIds:login_userId}})
+                    res.send(`<script>alert('로그인 되었습니다.'); window.location.replace('${urlEl}');</script>`) // 로그인성공
+                 }
+            } else {
             res.send("<script>alert('비밀번호가 옳지 않습니다.'); window.location.replace('/index');</script>")
         }
         
