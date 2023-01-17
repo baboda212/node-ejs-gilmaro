@@ -39,6 +39,7 @@ app.post('/search', async(req, res)=>{
 //splash
 app.get('/',async (req, res) => {
     res.render('pages/splashScreen.ejs')
+    
 })
 
 
