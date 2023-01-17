@@ -311,13 +311,15 @@ app.post('/create', async function(req, res){
     let email = req.body.email;
     let userId = req.body.userId;
     let pwd = req.body.pwd;
+    let cart = ','
 
     let user = await User.create({
         userName: name,
         userPhone: tell,
         userEmail: email,
         userIds: userId,
-        userPwd: pwd
+        userPwd: pwd,
+        userCart: cart
     })
 
     res.redirect('/index')
@@ -339,7 +341,7 @@ app.post('/login' , async function(req, res){
     let checkId = await User.findAll({where: {userIds:login_userId}});
     let reviewId =Boolean(checkId[0]);
     
-    // console.log(reviewId);
+    console.log("session= ", session);
     if(reviewId == false) {
         res.send(`<script>alert('존재하지 않는 아이디입니다.'); window.location.replace('${urlEl}');</script>`)
     } else {
@@ -352,17 +354,20 @@ app.post('/login' , async function(req, res){
                 // httpOnly: true // js접근 막음 오로지 웹서버데이터로만 움직일수있음
             });
                 const userCart = await User.findAll({where: {userIds:login_userId}})
-                // //console.log('카트',userCart[0].userCart);
+                console.log('카트',Boolean(userCart[0].userCart));
                 let cartArr = []
                 let sessionArr = [];
                 sessionArr = session.split(',')
                 cartArr = userCart[0].userCart.split(',')
                 // console.log("cart= ",cartArr,'session= ', sessionArr)
-                 if(userCart == ''){
+                 if(Boolean(userCart[0].userCart) == false ){
+                    console.log("이아이가 실행되나요?")
                     await User.update({
                         userCart: session
                     }, {where: {userIds:login_userId}})
+                    res.send(`<script>alert('로그인 되었습니다.'); window.location.replace('${urlEl}');</script>`) // 로그인성공
                  } else {
+                    
                     for(let i = 0; i < sessionArr.length; i++) {
                         if(cartArr.indexOf(sessionArr[i]) < 0 ) {
                             cartArr.push(sessionArr[i])
