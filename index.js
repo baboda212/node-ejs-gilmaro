@@ -168,6 +168,7 @@ app.post('/cart/:id', async function(req, res){
     let re = Object.values(cookie)
     
     
+    
     if(Boolean(session) == false) {
         session = cartEl;
     } else {
@@ -178,9 +179,21 @@ app.post('/cart/:id', async function(req, res){
     if(re == false ) {
         res.send(`<script>sessionStorage.setItem('0', '${session}'); window.location.href('/products') </script>`)
     } else {
-        const userCart = await User.findAll({where: {userIds:cookie}})
+        const userCart = await User.findAll({where: {userIds:cookie.user}})
+        console.log("cookie= ", userCart)
  
-        const cartArr = userCart[0].userCart.split(',')
+        const cartArr = userCart[0].userCart.split(',');
+        if(cartArr.indexOf(cartEl)<0) {
+           let string =  userCart[0].userCart + ',' + cartEl ;
+           await User.update({
+            userCart: string
+           }, {where: {userIds:cookie.user}})
+           res.send(`<script> alert('장바구니에 담겼습니다.'); window.location.replace('/products') </script>`)
+        } else {
+            res.send(`<script>alert('이미 담은 상품입니다.'); window.location.replace('/products') </script>`)
+        }
+
+
         // console.log(cartArr);
         const products = [];
         let arr = await Products.findAll({raw : true});
