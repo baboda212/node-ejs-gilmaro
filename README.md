@@ -18,10 +18,12 @@ by)김선민(조장/피그마 디자인 시안/프론트엔드), 권동환(팀�
 #### 2. 실제 회원가입, 로그인 정보수정 등 기능 구현
 #### 3. 장바구니, 찜목록등 session 과 cookie 등 브라우저의 기능 활용
 
-# 사이트 메인 페이지📰
-![image](https://user-images.githubusercontent.com/113665619/213124879-0cbb4815-38ab-4fdb-b7ad-cc4bfaedbc54.png)
+# 사이트 페이지📰
+![image 1](https://user-images.githubusercontent.com/113665619/215364470-2fba01d8-990c-4806-902f-ea947a69a95a.png)
+![image 2](https://user-images.githubusercontent.com/113665619/215364441-34c91393-d807-4c56-b0b6-a34798e1b65a.png)
+![image 3](https://user-images.githubusercontent.com/113665619/215364443-8c24b996-e6a3-4972-bd99-2a8656f85d23.png)
 
-# 페이지 기능소개
+
 
 
 
