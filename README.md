@@ -18,10 +18,17 @@ by)김선민(조장/피그마 디자인 시안/프론트엔드), 권동환(팀�
 #### 2. 실제 회원가입, 로그인 정보수정 등 기능 구현
 #### 3. 장바구니, 찜목록등 session 과 cookie 등 브라우저의 기능 활용
 
+#추가 수정보완 계획
+#### 1. 메인슬라이드 쇼의 로딩 시간 수정
+#### 2. 2023.01.30 현재 모바일 구현만 해 놓은 상태이나, 추후 web페이지도 가능하게 디자인 추가 삽입
+
 # 사이트 페이지📰
+![image 5](https://user-images.githubusercontent.com/113665619/215368359-f63b8193-86ed-4bea-8442-5db08d8adf33.png)
+![GNB](https://user-images.githubusercontent.com/113665619/215367879-f9f4eb88-22a6-406b-9a7d-bfb8d1a5513f.png)
 ![image 1](https://user-images.githubusercontent.com/113665619/215364470-2fba01d8-990c-4806-902f-ea947a69a95a.png)
 ![image 2](https://user-images.githubusercontent.com/113665619/215364441-34c91393-d807-4c56-b0b6-a34798e1b65a.png)
 ![image 3](https://user-images.githubusercontent.com/113665619/215364443-8c24b996-e6a3-4972-bd99-2a8656f85d23.png)
+![image 4](https://user-images.githubusercontent.com/113665619/215367886-21120833-9760-46e3-827e-3812b9b7a977.png)
 
 
 
