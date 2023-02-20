@@ -336,3 +336,18 @@
 }
 
 /* 상세보기 페이지 전용 구매nav */
+
+@media all and (min-width:768px){
+    .container .cashier-btn {
+        position: fixed;
+        bottom: 70px;
+        max-width: 100%;
+        width: 768px;
+        height: 80px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        outline: 1px solid rgba(47, 47, 47, 0.2);
+        background-color: #fff;
+    }
+}

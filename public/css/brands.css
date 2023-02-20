@@ -1,5 +1,5 @@
 /* brands.css */
-@media (max-width:500px){
+
     *{
         margin: 0;
         padding: 0;
@@ -82,5 +82,149 @@
         justify-content: center;
         align-items: flex-end;
     }
-}
 
+    @media all and (min-width:1024px) {
+        .container{
+            max-width: 768px;
+            margin: 0 auto;
+            color: #fff;
+        }
+        .content-1{
+            background-image: url(/images/a1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            padding-top: calc(369 / 262 * 100%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .content-p{
+            font-size: 16px;
+            /* outline: 1px solid red; */
+            width: 375px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #fff;
+        }
+        .content-2{
+            background-image: url(/images/a2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            padding-top: calc(369 / 262 * 100%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .content-3{
+            background-image: url(/images/a3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            padding-top: calc(369 / 262 * 100%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        
+        .content-4{
+            background-image: url(/images/a4.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            padding-top: calc(369 / 262 * 100%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        
+        .content-5{
+            background-image: url(/images/a5.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            padding-top: calc(369 / 262 * 100%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        } 
+    }
+
+    @media all and (min-width:768px) and (max-width:1023px){
+        .container{
+            max-width: 768px;
+            margin: 0 auto;
+            color: #fff;
+        }
+        .content-1{
+            background-image: url(/images/a1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            padding-top: calc(369 / 262 * 100%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .content-p{
+            font-size: 16px;
+            /* outline: 1px solid red; */
+            width: 375px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #fff;
+        }
+        .content-2{
+            background-image: url(/images/a2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            padding-top: calc(369 / 262 * 100%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .content-3{
+            background-image: url(/images/a3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            padding-top: calc(369 / 262 * 100%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        
+        .content-4{
+            background-image: url(/images/a4.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            padding-top: calc(369 / 262 * 100%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        
+        .content-5{
+            background-image: url(/images/a5.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            padding-top: calc(369 / 262 * 100%);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        } 
+    }
